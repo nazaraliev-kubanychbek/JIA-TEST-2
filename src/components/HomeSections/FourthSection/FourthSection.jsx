@@ -42,7 +42,7 @@ export const FourthSection = () => {
                             Lorem ipsum dolor sit amet consectetur. Ac sed orci dignissim neque augue porta. Ac sed orci dignissim neque augue porta.
                         </motion.p>
                     </motion.div>
-                    <YouTubePlayer videoId={'https://www.youtube.com/embed/gN-2ebZxEpY?si=9Vp_ajZkP1knNn4L'}/>
+                    <YouTubePlayer videoId={'https://www.youtube.com/embed/4UPVSX9ymyg?si=fthGnXJ8Wk9pBaJF'}/>
 
                     {/* <div className={styles.video}>
                         <iframe src="https://www.youtube.com/embed/4eKREu1wceI?si=PEQZzxAoyNYwH1cX" frameborder="0" title="YouTube video player" ></iframe>
@@ -50,7 +50,7 @@ export const FourthSection = () => {
                 </div>
 
                 <div className={styles.blockVideo}>
-                    <YouTubePlayer videoId={'https://www.youtube.com/embed/0IQ-YpXTj30?si=Cb2A4SYcIF8i0MLJ'}/>
+                    <YouTubePlayer videoId={'https://www.youtube.com/embed/yBJ3AlRBAw8?si=5EDalI1zrIs-m9Vg'}/>
                     {/* <div className={styles.video}>
                         <iframe src="https://www.youtube.com/embed/4eKREu1wceI?si=PEQZzxAoyNYwH1cX" frameborder="0" title="YouTube video player" ></iframe>
                     </div> */}

@@ -3,7 +3,6 @@ import styles from './SecondSection.module.scss';
 
 export const SecondSection = () => {
 
-    const [isVisible, setIsVisible] = useState(false);
     const observerRef = useRef(null);
 
     const [ currVal1, setCurrVal1 ] = useState(0);
@@ -24,12 +23,9 @@ export const SecondSection = () => {
           (entries) => {
             const entry = entries[0];
             if (entry.isIntersecting) {
-                setIsVisible(true);
                     currVal1 !== val1 && setTimeout(setCurrVal1, time, currVal1 + 1);
                     currVal2 !== val2 && setTimeout(setCurrVal2, time1, currVal2 + 1);
                     currVal3 !== val3 && setTimeout(setCurrVal3, time3, currVal3 + 1);
-            } else {
-              setIsVisible(false);
             }
           },
           {
@@ -71,7 +67,9 @@ export const SecondSection = () => {
                 </div>
             </div>
 
-            <button className={styles.button}>Подать проект на BIF 2024</button>
+            <a target='_blank' href="https://forms.gle/KmxKTQ91qZ9zJrqT8" rel="noreferrer">
+              <button className={styles.button}>Подать проект на BIF 2024</button>
+            </a>
         </section>
     );
 }
