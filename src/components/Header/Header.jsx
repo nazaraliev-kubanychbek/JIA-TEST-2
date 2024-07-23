@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from './Header.module.scss';
-import emblem from '../../img/header/emblem.svg';
-import secEmblem from '../../img/header/GreenEconomy1.svg';
+import emblem from '../../img/header/emblem.png';
+import secEmblem from '../../img/header/GreenEconomy1.png';
 import arrow from '../../img/header/Icons.svg';
 import { useEffect, useState } from "react";
 import {motion, AnimatePresence} from 'framer-motion';

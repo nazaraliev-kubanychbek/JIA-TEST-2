@@ -1,4 +1,4 @@
-import emblem from '@img/header/emblem.svg';
+import emblem from '@img/header/emblem.png';
 import email from '@img/footer/email.svg';
 import phone from '@img/footer/phone.svg';
 import whatsapp from '@img/footer/logos_whatsapp-icon.svg';
