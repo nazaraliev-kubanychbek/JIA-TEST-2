@@ -34,10 +34,26 @@
                 width: 100%;
             }
 
-            p{
-                color: #00000066;
-                margin-top: 56px;
+            .geeks{
+                margin-top: 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                img{
+                    width: 50px;
+                }
+
+                p{
+                    color: #00000066;
+                    margin-top: 56px;
+                    text-align: center;
+                    
+                }   
+
             }
+
+            
         }
 
         .contact{
@@ -46,6 +62,7 @@
                 font-size: 20px;
                 text-transform: uppercase;
                 font-weight: 700;
+                text-decoration: none;
             }
         }
 

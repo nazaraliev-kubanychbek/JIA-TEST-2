@@ -30,6 +30,11 @@
             img{
                 width: 100%;
                 border-radius: 20px;
+                transition: .3s;
+            }
+
+            img:hover{
+                transform: scale(1.2);
             }
 
             p{

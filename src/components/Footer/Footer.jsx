@@ -5,31 +5,42 @@ import whatsapp from '@img/footer/logos_whatsapp-icon.svg';
 import telegram from '@img/footer/logos_telegram.svg';
 import facebook from '@img/footer/logo_faceBook.svg';
 import insta from '@img/footer/logo_insta.svg';
+import geeks from '@img/footer/geeks.png';
 import styles from './Footer.module.scss'
 import { Link } from 'react-router-dom';
 
+
 const Footer = () => {
+    const scrollToTop = () => {
+        window.scrollTo({
+        top: 0,
+        // behavior: 'smooth',
+        });
+    };
     return (
         <footer className={styles.footer}>
             <div className={styles.container}>
 
                 <div className={styles.emblem}>
                     <img src={emblem} alt="emblem" />  
-                    <p>WaterMark "Made by Geeks Pro"</p>
+                    <div className={styles.geeks}>
+                        <img src={geeks} alt="geeks" />
+                        <p>WaterMark "Made by Geeks Pro"</p>
+                    </div>
                 </div>
 
                 <div className={styles.contact}>
                     <a href="https://www.instagram.com/bif.kg/">связаться с нами</a>
                     <p><img src={phone} alt="phone" />+996 555 895 362</p>
-                    <p><img src={email} alt="email" /> E-mail</p>
+                    <a target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to=bif@jia.kg&su=Тема%20письма&body=Текст%20сообщения" rel="noreferrer"><p><img src={email} alt="email" /> E-mail</p></a>
                 </div>
 
                 <div className={styles.navigation}>
                     <h3>Навигация</h3>
-                    <Link to={'/'}><p>О проекте</p></Link>
-                    <Link to={'/funds'}><p>Инвесторы</p></Link>
-                    <Link to={'/projects'}><p>Инвест.проекты</p></Link>
-                    <Link to={'/exhibition'}><p>Выставка</p></Link>
+                    <Link onClick={scrollToTop} to={'/'}><p>О проекте</p></Link>
+                    <Link onClick={scrollToTop} to={'/funds'}><p>Инвесторы</p></Link>
+                    <Link onClick={scrollToTop} to={'/projects'}><p>Инвест.проекты</p></Link>
+                    <Link onClick={scrollToTop} to={'/exhibition'}><p>Выставка</p></Link>
                 </div>
 
                 <div className={styles.social_media}> 
