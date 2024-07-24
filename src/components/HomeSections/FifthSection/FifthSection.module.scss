@@ -2,11 +2,11 @@
     width: 100%;
 
     .swiperCont{
-        margin: 0 50px;
+        margin: 0 100px;
+        padding: 0;
         overflow: hidden;
 
         .swiperItem{
-            width: 80%;
             text-align: center;
 
             p{
@@ -16,8 +16,9 @@
             }
 
             .photo{
-                width: 335px;
+                width: 325px;
                 height: 390px;
+                margin-left: 60px;
 
                 img{
                     width: 100%;
@@ -29,3 +30,5 @@
         }
     }
 }
+
+

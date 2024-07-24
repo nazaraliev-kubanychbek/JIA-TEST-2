@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from './Header.module.scss';
-import emblem from '../../img/header/emblem.svg';
-import secEmblem from '../../img/header/GreenEconomy1.svg';
+import emblem from '../../img/header/emblem.png';
+import secEmblem from '../../img/header/GreenEconomy1.png';
 import arrow from '../../img/header/Icons.svg';
 import { useEffect, useState } from "react";
 import {motion, AnimatePresence} from 'framer-motion';
@@ -11,7 +11,7 @@ const Header = () => {
     const [lang, setLang] = useState('Рус');
     const [scrolled, setScrolled] = useState(false);
 
-  
+    const languiages = ['Рус', 'Eng', 'Кыр'];
 
     const showLang = () => {
         setShow(!show)
@@ -68,9 +68,9 @@ const Header = () => {
                                 transition={{duration: .5}}
                             >
                                 <div className={styles.hidden}>
-                                    <p onClick={() => changLang('Рус')}>Рус</p>
-                                    <p onClick={() => changLang('Eng')}>Eng</p>
-                                    <p onClick={() => changLang('Кыр')}>Кыр</p>
+                                    {languiages?.map((language, index) => 
+                                        language !== lang ? (<p key={index} onClick={() => changLang(language)}>{language}</p>) : ''
+                                    )}
                                 </div>
                             </motion.div>
                             )

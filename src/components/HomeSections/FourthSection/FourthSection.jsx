@@ -1,9 +1,10 @@
 import styles from './FourthSection.module.scss';
 import {motion} from 'framer-motion';
+import YouTubePlayer from './YouTubePlayer/YouTubePlayer';
 
 const firstTextAnimation = {
     hidden : {
-        x: -200,
+        x: -80,
         opacity: 0,
     },
     visible: custom => ({
@@ -15,7 +16,7 @@ const firstTextAnimation = {
 
 const secondTextAnimation = {
     hidden : {
-        x: 200,
+        x: 80,
         opacity: 0,
     },
     visible: custom => ({
@@ -41,15 +42,18 @@ export const FourthSection = () => {
                             Lorem ipsum dolor sit amet consectetur. Ac sed orci dignissim neque augue porta. Ac sed orci dignissim neque augue porta.
                         </motion.p>
                     </motion.div>
-                    <div className={styles.video}>
+                    <YouTubePlayer videoId={'https://www.youtube.com/embed/4UPVSX9ymyg?si=fthGnXJ8Wk9pBaJF'}/>
+
+                    {/* <div className={styles.video}>
                         <iframe src="https://www.youtube.com/embed/4eKREu1wceI?si=PEQZzxAoyNYwH1cX" frameborder="0" title="YouTube video player" ></iframe>
-                    </div>
+                    </div> */}
                 </div>
 
                 <div className={styles.blockVideo}>
-                    <div className={styles.video}>
+                    <YouTubePlayer videoId={'https://www.youtube.com/embed/yBJ3AlRBAw8?si=5EDalI1zrIs-m9Vg'}/>
+                    {/* <div className={styles.video}>
                         <iframe src="https://www.youtube.com/embed/4eKREu1wceI?si=PEQZzxAoyNYwH1cX" frameborder="0" title="YouTube video player" ></iframe>
-                    </div>
+                    </div> */}
                     <motion.div
                         initial='hidden'
                         whileInView='visible'

@@ -1,4 +1,4 @@
-import emblem from '@img/header/emblem.svg';
+import emblem from '@img/header/emblem.png';
 import email from '@img/footer/email.svg';
 import phone from '@img/footer/phone.svg';
 import whatsapp from '@img/footer/logos_whatsapp-icon.svg';
@@ -35,10 +35,16 @@ const Footer = () => {
                 <div className={styles.social_media}> 
                     <h3>Соц.сети</h3>
                     <div>
-                        <img src={whatsapp} alt="whatsapp" />
-                        <img src={facebook} alt="facebook" />
-                        <img src={insta} alt="instagram" />
-                        <img src={telegram} alt="telegram" />
+                        <a target='_balnk' href="https://api.whatsapp.com/send?%20phone=996555895362">
+                            <img src={whatsapp} alt="whatsapp" />
+                        </a>
+                        <a target='_balnk' href="https://www.facebook.com/bishkekinvestmentforum?mibextid=LQQJ4d ">
+                            <img src={facebook} alt="facebook" />
+                        </a>
+                        <a target='_balnk' href="https://www.instagram.com/bif_kg_/ ">
+                            <img src={insta} alt="instagram" />
+                        </a>
+                        <a target='_balnk' href="https://t.me/bishkekinvestforum"><img src={telegram} alt="telegram" /></a>
                     </div>
                 </div>
             </div>

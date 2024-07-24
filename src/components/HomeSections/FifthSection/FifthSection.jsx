@@ -1,8 +1,10 @@
 import styles from './FifthSection.module.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import 'swiper/css/free-mode';
+// import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import 'swiper.css';
 
 import { FreeMode, Navigation, Mousewheel, Keyboard } from 'swiper/modules';
 
@@ -12,13 +14,13 @@ export const FifthSection = () => {
             <div className={styles.swiperCont}>
                 <Swiper
                     slidesPerView={4}
-                    spaceBetween={0}
+                    // spaceBetween={0}
                     freeMode={true}
                     loop={true}
                     navigation={true}
                     keyboard={true}
                     modules={[Navigation, Mousewheel, Keyboard, FreeMode]}
-                    className="mySwiper"
+                    // className="mySwiper"
                 >
                     <SwiperSlide>
                         <div className={styles.swiperItem}>
