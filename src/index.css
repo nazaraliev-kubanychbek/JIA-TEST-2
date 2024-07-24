@@ -10,3 +10,70 @@ body{
     position: relative;
     font-family: "Inter", sans-serif;
 }
+
+
+
+.contianer{
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.col-6{
+    width: 50%;
+    padding: 0 10px;
+}
+
+.col-4{
+    width: 33.3%;
+    padding: 0 10px;
+}
+
+.col-3{
+    width: 25%;
+    padding: 0 10px;
+}
+
+
+@media screen and (max-width: 1400px) {
+    .contianer{
+        max-width: 1140px;
+    }
+}
+
+
+
+@media screen and (max-width: 1200px) {
+    .contianer{
+        max-width: 960px;
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    .contianer{
+        max-width: 720px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .contianer{
+        max-width: 540px;
+    }
+}
+
+
+
+@media screen and (max-width: 576px) {
+    .contianer{
+        max-width: 100%;
+        padding: 0 10px;
+    }
+}
