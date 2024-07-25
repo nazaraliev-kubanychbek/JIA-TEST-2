@@ -1,30 +1,5 @@
 import styles from './FourthSection.module.scss';
-import {motion} from 'framer-motion';
 import YouTubePlayer from './YouTubePlayer/YouTubePlayer';
-
-const firstTextAnimation = {
-    hidden : {
-        x: -80,
-        opacity: 0,
-    },
-    visible: custom => ({
-        x: 0,
-        opacity: 1,
-        transition: { delay: custom * .5 },
-    }),
-}
-
-const secondTextAnimation = {
-    hidden : {
-        x: 80,
-        opacity: 0,
-    },
-    visible: custom => ({
-        x: 0,
-        opacity: 1,
-        transition: { delay: custom * .5 },
-    }),
-}
 
 export const FourthSection = () => {
     return (
@@ -32,16 +7,12 @@ export const FourthSection = () => {
             <div className={styles.whiteBlock}>
 
                 <div className={styles.blockVideo}>
-                    <motion.div 
-                        initial='hidden'
-                        whileInView='visible'
-                        className={styles.text}
-                    >
-                        <motion.h2 variants={firstTextAnimation} custom={1}>BIF 2022</motion.h2>
-                        <motion.p variants={firstTextAnimation} custom={2}>
+                    <div className={styles.text}>
+                        <h2>BIF 2022</h2>
+                        <p>
                             Lorem ipsum dolor sit amet consectetur. Ac sed orci dignissim neque augue porta. Ac sed orci dignissim neque augue porta.
-                        </motion.p>
-                    </motion.div>
+                        </p>
+                    </div>
                     <YouTubePlayer videoId={'https://www.youtube.com/embed/4UPVSX9ymyg?si=fthGnXJ8Wk9pBaJF'}/>
 
                     {/* <div className={styles.video}>
@@ -54,16 +25,12 @@ export const FourthSection = () => {
                     {/* <div className={styles.video}>
                         <iframe src="https://www.youtube.com/embed/4eKREu1wceI?si=PEQZzxAoyNYwH1cX" frameborder="0" title="YouTube video player" ></iframe>
                     </div> */}
-                    <motion.div
-                        initial='hidden'
-                        whileInView='visible'
-                        className={styles.text}
-                    >
-                        <motion.h2 variants={secondTextAnimation} custom={1}>Green Economy 2022</motion.h2>
-                        <motion.p variants={secondTextAnimation} custom={1}>
+                    <div className={styles.text}>
+                        <h2>Green Economy 2022</h2>
+                        <p>
                             Lorem ipsum dolor sit amet consectetur. Ac sed orci dignissim neque augue porta. Ac sed orci dignissim neque augue porta.
-                        </motion.p>
-                    </motion.div>
+                        </p>
+                    </div>
                 </div>
 
             </div>
