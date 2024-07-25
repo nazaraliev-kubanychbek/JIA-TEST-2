@@ -19,45 +19,47 @@ const Footer = () => {
     };
     return (
         <footer className={styles.footer}>
-            <div className={styles.container}>
+            <div className='contianer'>
+                <div className={styles.container}>
+                    <div className={styles.emblem}>
+                        <img src={emblem} alt="emblem" />  
+                        <div className={styles.geeks}>
+                            <img src={geeks} alt="geeks" />
+                            <p>WaterMark "Made by Geeks Pro"</p>
+                        </div>
+                    </div>
 
-                <div className={styles.emblem}>
-                    <img src={emblem} alt="emblem" />  
-                    <div className={styles.geeks}>
-                        <img src={geeks} alt="geeks" />
-                        <p>WaterMark "Made by Geeks Pro"</p>
+                    <div className={styles.contact}>
+                        <a href="https://www.instagram.com/bif.kg/">связаться с нами</a>
+                        <p><img src={phone} alt="phone" />+996 555 895 362</p>
+                        <a target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to=bif@jia.kg&su=Тема%20письма&body=Текст%20сообщения" rel="noreferrer"><p><img src={email} alt="email" /> E-mail</p></a>
+                    </div>
+
+                    <div className={styles.navigation}>
+                        <h3>Навигация</h3>
+                        <Link onClick={scrollToTop} to={'/'}><p>О проекте</p></Link>
+                        <Link onClick={scrollToTop} to={'/funds'}><p>Инвесторы</p></Link>
+                        <Link onClick={scrollToTop} to={'/projects'}><p>Инвест.проекты</p></Link>
+                        <Link onClick={scrollToTop} to={'/exhibition'}><p>Выставка</p></Link>
+                    </div>
+
+                    <div className={styles.social_media}> 
+                        <h3>Соц.сети</h3>
+                        <div>
+                            <a target='_balnk' href="https://api.whatsapp.com/send?%20phone=996555895362">
+                                <img src={whatsapp} alt="whatsapp" />
+                            </a>
+                            <a target='_balnk' href="https://www.facebook.com/bishkekinvestmentforum?mibextid=LQQJ4d ">
+                                <img src={facebook} alt="facebook" />
+                            </a>
+                            <a target='_balnk' href="https://www.instagram.com/bif_kg_/ ">
+                                <img src={insta} alt="instagram" />
+                            </a>
+                            <a target='_balnk' href="https://t.me/bishkekinvestforum"><img src={telegram} alt="telegram" /></a>
+                        </div>
                     </div>
                 </div>
-
-                <div className={styles.contact}>
-                    <a href="https://www.instagram.com/bif.kg/">связаться с нами</a>
-                    <p><img src={phone} alt="phone" />+996 555 895 362</p>
-                    <a target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to=bif@jia.kg&su=Тема%20письма&body=Текст%20сообщения" rel="noreferrer"><p><img src={email} alt="email" /> E-mail</p></a>
-                </div>
-
-                <div className={styles.navigation}>
-                    <h3>Навигация</h3>
-                    <Link onClick={scrollToTop} to={'/'}><p>О проекте</p></Link>
-                    <Link onClick={scrollToTop} to={'/funds'}><p>Инвесторы</p></Link>
-                    <Link onClick={scrollToTop} to={'/projects'}><p>Инвест.проекты</p></Link>
-                    <Link onClick={scrollToTop} to={'/exhibition'}><p>Выставка</p></Link>
-                </div>
-
-                <div className={styles.social_media}> 
-                    <h3>Соц.сети</h3>
-                    <div>
-                        <a target='_balnk' href="https://api.whatsapp.com/send?%20phone=996555895362">
-                            <img src={whatsapp} alt="whatsapp" />
-                        </a>
-                        <a target='_balnk' href="https://www.facebook.com/bishkekinvestmentforum?mibextid=LQQJ4d ">
-                            <img src={facebook} alt="facebook" />
-                        </a>
-                        <a target='_balnk' href="https://www.instagram.com/bif_kg_/ ">
-                            <img src={insta} alt="instagram" />
-                        </a>
-                        <a target='_balnk' href="https://t.me/bishkekinvestforum"><img src={telegram} alt="telegram" /></a>
-                    </div>
-                </div>
+                
             </div>
         </footer>
     );

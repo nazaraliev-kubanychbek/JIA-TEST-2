@@ -1,4 +1,5 @@
-import { FifthSection, FirstSection, FourthSection, SecondSection, ThirdSection } from "@components/HomeSections";
+import { FifthSection, FirstSection, FourthSection, SecondSection, ThirdSection } from "@pages/HomePage/HomeSections";
+import '../../index.css'
 
 export const HomePage = () => {
     return (
