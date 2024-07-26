@@ -10,7 +10,7 @@ const Header = () => {
     const [show, setShow] = useState(false);
     const [lang, setLang] = useState('Рус');
     const [scrolled, setScrolled] = useState(false);
-    const [route, setRoute] = useState(true);
+    const [route, setRoute] = useState(false);
 
     const languiages = ['Рус', 'Eng', 'Кыр'];
 

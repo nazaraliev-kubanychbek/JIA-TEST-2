@@ -3,7 +3,9 @@
     background-color: #E7E7E7;
 
     .headerTop{
-        padding: 20px 100px;
+        width: 1400px;
+        margin: 0 auto;
+        padding: 20px 0;
         display: flex;
         justify-content: space-between;
 
@@ -17,7 +19,7 @@
     }
 
     .header{
-        width: 90%;
+        width: 1400px;
         height: 84px;
         border: 1px solid #FFFFFF66;
         backdrop-filter: blur(20px);
@@ -87,3 +89,42 @@
     }
 }
 
+@media screen and (max-width: 1400px) {
+    .container{
+        .header{
+            width: 90%;
+        }
+    }   
+}
+
+
+
+// @media screen and (max-width: 1200px) {
+//     .container{
+//         max-width: 960px;
+//     }
+// }
+
+
+// @media screen and (max-width: 992px) {
+//     .container{
+//         max-width: 720px;
+//     }
+// }
+
+
+// @media screen and (max-width: 768px) {
+//     .container{
+//         max-width: 540px;
+//     }
+// }
+
+
+
+// @media screen and (max-width: 576px) {
+//     .container{
+//         max-width: 100%;
+//         padding: 0 10px;
+//     }
+// }
+// }
