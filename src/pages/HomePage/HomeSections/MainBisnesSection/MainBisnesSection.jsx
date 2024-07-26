@@ -1,6 +1,6 @@
-import styles from './ThirdSection.module.scss';
+import styles from './MainBisnesSection.module.scss';
 
-export const ThirdSection = () => {
+export const MainBisnesSection = () => {
     return (
         <section className='contianer'>
             <div className={styles.container}>

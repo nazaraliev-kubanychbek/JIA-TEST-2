@@ -1,11 +1,11 @@
-import styles from './FourthSection.module.scss';
+import styles from './VideosSection.module.scss';
 import YouTubePlayer from './YouTubePlayer/YouTubePlayer';
 
-export const FourthSection = () => {
+export const VideosSection = () => {
     return (
-        <section className='contianer'>
-            <div className={styles.container}>
+        <section className={styles.container}>
                 <div className={styles.whiteBlock}>
+            <div className='contianer'>
 
                     <div className={styles.blockVideo}>
                         <div className={styles.text}>
