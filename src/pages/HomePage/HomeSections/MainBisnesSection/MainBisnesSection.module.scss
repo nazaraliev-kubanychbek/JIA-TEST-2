@@ -26,15 +26,24 @@
         .item{
             width: 25%;
 
-            img{
-                width: 100%;
+            .photoItem{
+                height: 255px;
                 border-radius: 20px;
-                transition: .3s;
+                overflow: hidden;
+
+                img{
+                    object-fit: cover;
+                    height: 100%;
+                    width: 100%;
+                    transition: .3s;
+                }
+
+                img:hover{
+                    transform: scale(1.05);
+                }
             }
 
-            img:hover{
-                transform: scale(1.05);
-            }
+            
 
             p{
                 font-size: 20px;
