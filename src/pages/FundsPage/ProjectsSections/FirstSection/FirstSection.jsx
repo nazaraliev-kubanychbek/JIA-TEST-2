@@ -1,4 +1,5 @@
 import styles from './FirstSection.module.scss';
+import graph from '@img/graph.png';
 
 export const FirstSection = () => {
 
@@ -30,23 +31,29 @@ export const FirstSection = () => {
         },
     ];
     return (
-        <section className={styles.container}>
-            <table>
-                <tr>
-                    <th>Название</th>
-                    <th>Описание </th>
-                    <th>Виды фин.</th>
-                </tr>
-                {
-                    arrTable?.map((item, index) => (
-                         <tr key={index}>
-                            <td>{item.firstText}</td>
-                            <td>{item.secondText}</td>
-                            <td>{item.thirdText}</td>
-                        </tr>
-                    ))
-                }
+        <section className='contianer'>
+            <div className={styles.container}>
+                <img src={graph} alt="BgGraph" />
+                <table>
+                    <tr>
+                        <th>Название</th>
+                        <th>Описание </th>
+                        <th>Виды фин.</th>
+                    </tr>
+                    {
+                        arrTable?.map((item, index) => (
+                            <tr key={index}>
+                                <td>{item.firstText}</td>
+                                <td>{item.secondText}</td>
+                                <td>{item.thirdText}</td>
+                            </tr>
+                        ))
+                    }
                 </table>
+
+                <button className={styles.button}>Связаться</button>
+            </div>
+            
         </section>
     );
 }

@@ -1,4 +1,4 @@
-import styles from './FifthSection.module.scss';
+import styles from './SwiperSection.module.scss';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -8,7 +8,7 @@ import imgMan from '@img/q.png';
 import { FreeMode, Navigation, Mousewheel, Keyboard, Autoplay } from 'swiper/modules';
 import { useRef } from 'react';
 
-export const FifthSection = () => {
+export const SwiperSection = () => {
     const swiperRef = useRef(null);
 
     const arrSwiper = [
@@ -48,6 +48,7 @@ export const FifthSection = () => {
     return (
         <section className='contianer'>
             <div className={styles.container}>
+                <h2>Участники выставки 2024</h2>
                 <div className={styles.swiperCont}>
                     <Swiper
                         ref={swiperRef}

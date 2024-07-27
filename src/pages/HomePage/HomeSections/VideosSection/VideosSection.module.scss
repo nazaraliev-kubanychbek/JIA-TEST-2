@@ -5,10 +5,11 @@
     .whiteBlock{
         width: 100%;
         background-color: #E7E7E7;
-        padding: 50px 80px;
+        padding: 50px 0;
         border-radius: 80px;
 
         .blockVideo{
+            // width: 1400px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -55,6 +56,10 @@
                     padding-left: 230px;
                 }
             }
+        }
+
+        .blockVideo:first-child{
+            margin-bottom: 60px;
         }
     }
 }

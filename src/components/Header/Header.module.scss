@@ -29,7 +29,7 @@
         justify-content: space-between;
         color: #FFFFFF;
         margin-top: 20px;
-        position: fixed;
+        position: absolute;
         top: 160px;
         left: 50%;
         transform: translate(-50%);
@@ -50,7 +50,7 @@
         }
 
         .language{
-            border: 1px solid #FFFFFF;
+            // border: 1px solid #FFFFFF;
             height: 54px;
             border-radius: 20px;
             font-size: 24px;
@@ -84,6 +84,8 @@
                 width: 20px;
                 height: 20px;
                 margin-left: 15px;
+                transition: .3s;
+               
             }
         }
     }

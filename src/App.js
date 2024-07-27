@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
 import { ErrorPage, ExhibitionPage, FundsPage, HomePage, ProjectsPage } from "./pages";
+import { Footer, Header, NavigationTop } from "./components";
 
 function App() {
   return (
     <BrowserRouter >
       <Header />
+      <NavigationTop />
 
       <Routes>
         <Route path="/" element={<HomePage />} />

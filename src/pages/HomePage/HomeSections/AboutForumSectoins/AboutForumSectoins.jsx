@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import styles from './SecondSection.module.scss';
+import styles from './AboutForumSectoins.module.scss';
 
-export const SecondSection = () => {
+export const AboutForumSectoins = () => {
 
     const observerRef = useRef(null);
 

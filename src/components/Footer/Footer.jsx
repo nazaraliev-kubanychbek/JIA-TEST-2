@@ -10,7 +10,7 @@ import styles from './Footer.module.scss'
 import { Link } from 'react-router-dom';
 
 
-const Footer = () => {
+export const Footer = () => {
     const scrollToTop = () => {
         window.scrollTo({
         top: 0,
@@ -64,5 +64,3 @@ const Footer = () => {
         </footer>
     );
 }
-
-export default Footer;
