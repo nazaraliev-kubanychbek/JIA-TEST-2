@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './FirstSection.module.scss';
 import graph from '@img/graph.png';
 
@@ -51,7 +52,7 @@ export const FirstSection = () => {
                     }
                 </table>
 
-                <button className={styles.button}>Связаться</button>
+                <Link to={'/fundsForm'}><button className={styles.button}>Связаться</button></Link>
             </div>
             
         </section>
