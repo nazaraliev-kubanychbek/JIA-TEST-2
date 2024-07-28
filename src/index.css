@@ -14,7 +14,7 @@ body{
 
 
 
-.contianer{
+.container{
     /* max-width: 1600px; */
     max-width: 1400px;
     margin: 0 auto;
@@ -24,6 +24,7 @@ body{
 .row{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 
@@ -44,7 +45,7 @@ body{
 
 
 @media screen and (max-width: 1480px) {
-    .contianer{
+    .container{
         max-width: 1140px;
     }
 }
@@ -52,21 +53,21 @@ body{
 
 
 @media screen and (max-width: 1200px) {
-    .contianer{
+    .container{
         max-width: 960px;
     }
 }
 
 
 @media screen and (max-width: 992px) {
-    .contianer{
+    .container{
         max-width: 720px;
     }
 }
 
 
 @media screen and (max-width: 768px) {
-    .contianer{
+    .container{
         max-width: 540px;
     }
 }
@@ -74,7 +75,7 @@ body{
 
 
 @media screen and (max-width: 576px) {
-    .contianer{
+    .container{
         max-width: 100%;
         padding: 0 10px;
     }
