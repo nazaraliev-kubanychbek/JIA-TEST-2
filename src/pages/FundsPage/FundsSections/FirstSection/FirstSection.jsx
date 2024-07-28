@@ -32,7 +32,7 @@ export const FirstSection = () => {
         },
     ];
     return (
-        <section className='contianer'>
+        <section className='container'>
             <div className={styles.container}>
                 <img src={graph} alt="BgGraph" />
                 <table>

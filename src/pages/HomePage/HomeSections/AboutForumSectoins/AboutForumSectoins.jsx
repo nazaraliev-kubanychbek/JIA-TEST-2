@@ -46,7 +46,7 @@ export const AboutForumSectoins = () => {
 
 
     return (
-        <section className='contianer'>
+        <section className='container'>
             <div className={styles.container}>
               <h2>О форуме</h2>
               <p> 
