@@ -13,11 +13,18 @@ body{
 
 
 
-.contianer{
-    max-width: 1320px;
+.container{
+    max-width: 1400px;
     margin: 0 auto;
 }
-
+h1.title{
+    font-size: 60px;
+    color: #D3A60D;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
 
 .row{
     display: flex;
@@ -42,7 +49,7 @@ body{
 
 
 @media screen and (max-width: 1400px) {
-    .contianer{
+    .container{
         max-width: 1140px;
     }
 }
@@ -50,21 +57,21 @@ body{
 
 
 @media screen and (max-width: 1200px) {
-    .contianer{
+    .container{
         max-width: 960px;
     }
 }
 
 
 @media screen and (max-width: 992px) {
-    .contianer{
+    .container{
         max-width: 720px;
     }
 }
 
 
 @media screen and (max-width: 768px) {
-    .contianer{
+    .container{
         max-width: 540px;
     }
 }
@@ -72,7 +79,7 @@ body{
 
 
 @media screen and (max-width: 576px) {
-    .contianer{
+    .container{
         max-width: 100%;
         padding: 0 10px;
     }
