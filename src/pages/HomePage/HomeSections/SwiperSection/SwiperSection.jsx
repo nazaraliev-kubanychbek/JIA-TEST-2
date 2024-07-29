@@ -46,7 +46,7 @@ export const SwiperSection = () => {
     ];
 
     return (
-        <section className='contianer'>
+        <section className='container'>
             <div className={styles.container}>
                 <h2>Участники выставки 2024</h2>
                 <div className={styles.swiperCont}>

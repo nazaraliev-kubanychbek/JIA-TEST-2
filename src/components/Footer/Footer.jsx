@@ -19,7 +19,7 @@ export const Footer = () => {
     };
     return (
         <footer className={styles.footer}>
-            <div className='contianer'>
+            <div className='container'>
                 <div className={styles.container}>
                     <div className={styles.emblem}>
                         <img src={emblem} alt="emblem" />  

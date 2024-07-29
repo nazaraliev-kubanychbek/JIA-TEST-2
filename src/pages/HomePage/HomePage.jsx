@@ -3,7 +3,7 @@ import '../../index.css'
 
 export const HomePage = () => {
     return (
-        <div style={{ paddingBottom: '400px', backgroundColor: '#051650'}}>
+        <div style={{ minHeight: '100vh'}}>
             <FirstSection />
             <AboutForumSectoins />
             <MainBisnesSection />

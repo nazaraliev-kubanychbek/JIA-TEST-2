@@ -2,7 +2,7 @@ import styles from './MainBisnesSection.module.scss';
 
 export const MainBisnesSection = () => {
     return (
-        <section className='contianer'>
+        <section className='container'>
             <div className={styles.container}>
                 <h2>Что вас будет ждать на главном бизнес событии года?</h2>
                 <p>BIF 2024 - Green  Economy 2024</p>
