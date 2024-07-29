@@ -5,7 +5,7 @@ export const VideosSection = () => {
     return (
         <section className={styles.container}>
                 <div className={styles.whiteBlock}>
-            <div className='contianer'>
+            <div className='container'>
 
                     <div className={styles.blockVideo}>
                         <div className={styles.text}>
