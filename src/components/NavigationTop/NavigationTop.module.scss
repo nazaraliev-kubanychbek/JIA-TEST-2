@@ -14,11 +14,12 @@
         font-size: 16px;
     }
     @include respond-to("medium") {
-        right: 15%;
+        right: 65px;
+        width: 54px;
+        height: 54px;
+        border: 3px solid #D3A60D;
     }
-    @include respond-to("betweenSandM") {
-        right: 235px;
-    }
+    
 }
 
 .navigation:hover{
@@ -37,16 +38,16 @@
     right: 65px;
     width: 74px;
     height: 74px;
-    z-index: 9; /* Ensures it's behind the .navigation */
+    z-index: 9; 
     @include respond-to("large") {
         font-size: 16px;
     }
     @include respond-to("medium") {
-        right: 15%;
+        right: 65px;
+        width: 54px;
+        height: 54px;
     }
-    @include respond-to("betweenSandM") {
-        right: 235px;
-    }
+
 }
 
 .round {
@@ -57,6 +58,10 @@
     border-radius: 50%;
     opacity: 0.5;
     animation: waves 2s infinite;
+    @include respond-to("medium") {
+        width: 54px;
+        height: 54px;
+    }
 }
 
 .round:nth-child(2) {

@@ -43,9 +43,9 @@ export const Footer = () => {
 
                     <div className={styles.navigation}>
                         <h3>Навигация</h3>
-                        <Link onClick={scrollToTop} to={'/'}><p>О проекте</p></Link>
+                        <Link onClick={scrollToTop} to={'/projects'}><p>О проекте</p></Link>
                         <Link onClick={scrollToTop} to={'/funds'}><p>Источники финансирования</p></Link>
-                        <Link onClick={scrollToTop} to={'/projects'}><p>Бизнес проекты</p></Link>
+                        <Link onClick={scrollToTop} to={'/business'}><p>Бизнес проекты</p></Link>
                         <Link onClick={scrollToTop} to={'/exhibition'}><p>Выставка</p></Link>
                     </div>
 
