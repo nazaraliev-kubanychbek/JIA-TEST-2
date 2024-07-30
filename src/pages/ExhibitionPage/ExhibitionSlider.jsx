@@ -35,7 +35,7 @@ const ExhibitionSlider = () => {
         <div className='exhibitionPage-slider'>
             <div className="container">
 
-            <div className="row">
+
             <Swiper
 ref={swiperRef}
 slidesPerView={2}
@@ -52,12 +52,12 @@ modules={[Navigation, Mousewheel, Keyboard, FreeMode, Autoplay]}
     {
         sliderList.map(item =>{
             return <SwiperSlide key={item.id}>
-<div className="col-6">
+
                     <div className="exhibitionPage-slider-slide">
                         <img src={item.img1} alt="" className="exhibitionPage-slider-slide-img" />
                         <img src={item.img2} alt="" className="exhibitionPage-slider-slide-img" />
                     </div>
-                </div>
+
             </SwiperSlide>
         })
     }
@@ -65,7 +65,6 @@ modules={[Navigation, Mousewheel, Keyboard, FreeMode, Autoplay]}
 
 </Swiper>
 
-            </div>
             </div>
         </div>
     );
