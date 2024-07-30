@@ -15,11 +15,17 @@ body{
 
 
 .container{
-    /* max-width: 1600px; */
     max-width: 1400px;
     margin: 0 auto;
 }
-
+h1.title{
+    font-size: 60px;
+    color: #D3A60D;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
 
 .row{
     display: flex;
@@ -44,8 +50,8 @@ body{
 }
 
 
-@media screen and (max-width: 1480px) {
-    .container{
+@media screen and (max-width: 1400px) {
+    .contianer{
         max-width: 1140px;
     }
 }
