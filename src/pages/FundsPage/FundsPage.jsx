@@ -1,9 +1,12 @@
+import { DescriptionSection } from "@components/index";
+import { FirstSection } from "./FundsSections";
 
 
 export const FundsPage = () => {
     return (
-        <div style={{width: '100%', height: '100vh'}}>
-<h1>Инвестиционные фонды и компании </h1>
+        <div style={{minHeight: '100vh'}}>
+            <DescriptionSection text={'источники финансирования'} />
+            <FirstSection />
         </div>
     );
 }

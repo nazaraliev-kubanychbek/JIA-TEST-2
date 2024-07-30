@@ -3,14 +3,13 @@ import styles from './Header.module.scss';
 import emblem from '../../img/header/emblem.png';
 import secEmblem from '../../img/header/GreenEconomy1.png';
 import arrow from '../../img/header/Icons.svg';
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {motion, AnimatePresence} from 'framer-motion';
 
-const Header = () => {
+export const Header = () => {
     const [show, setShow] = useState(false);
     const [lang, setLang] = useState('Рус');
-    const [scrolled, setScrolled] = useState(false);
-    const [route, setRoute] = useState(true);
+    const [route, setRoute] = useState(false);
 
     const languiages = ['Рус', 'Eng', 'Кыр'];
 
@@ -32,22 +31,6 @@ const Header = () => {
         setLang(lang);
     }
 
-    useEffect(() => {
-        const handleScroll = () => {
-        if (window.scrollY > 150) {
-            setScrolled(true);
-        } else {
-            setScrolled(false);
-        }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-        window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
     return (
         <header className={styles.container}>
             <div className={styles.headerTop}>
@@ -55,7 +38,7 @@ const Header = () => {
                 <img src={secEmblem} alt="" />
             </div>
 
-            <div style={scrolled ? {position: 'fixed', top: '20px'} : {position: 'absolute'}} className={styles.header}>
+            <div className={styles.header}>
                 <div className={styles.links}>
                     {
                         route === true ? (<Link onClick={() => {scrollToTop(); changeRoute()}} to={'/'}>Главная</Link>) 
@@ -69,7 +52,7 @@ const Header = () => {
                 <div onClick={showLang} style={show ? { position: 'absolute', right: '30px', borderRadius: '20px' } : {backgroundColor: 'none'}} className={styles.language}>
                     <div className={styles.mainLang}>
                         <p>{lang}</p>
-                        <img src={arrow} alt="arrow" />    
+                        <img style={show ? {transform: 'rotate(-180deg)'} : {transform: 'rotate(0deg)'}} src={arrow} alt="arrow" />    
                     </div>
                    
                     <AnimatePresence>
@@ -97,5 +80,3 @@ const Header = () => {
         </header>
     );
 }
-
-export default Header;

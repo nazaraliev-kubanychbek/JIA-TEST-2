@@ -1,0 +1,59 @@
+.navigation {
+    width: 74px;
+    height: 74px;
+    position: fixed;
+    top: 65%;
+    right: 65px;
+    z-index: 10;
+    border: 5px solid #D3A60D;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+.navigation:hover{
+    background-color: #d3a50d3c;
+}
+
+.navigation img {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.wave_container {
+    position: fixed;
+    top: 65%;
+    right: 65px;
+    width: 74px;
+    height: 74px;
+    z-index: 9; /* Ensures it's behind the .navigation */
+}
+
+.round {
+    position: absolute;
+    width: 74px;
+    height: 74px;
+    border: 1px solid #D3A60D;
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: waves 2s infinite;
+}
+
+.round:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.round:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes waves {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+    100% {
+        transform: scale(1.6);
+        opacity: 0;
+    }
+}

@@ -1,13 +1,14 @@
 .footer{
     width: 100%;
     background-color: #E7E7E7;
-    padding: 47px 100px 24px 100px;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
     // position: absolute;
     // bottom: 0;
 
     .container{
+        width: 100%;
+        padding: 47px 0 24px 0;
         display: flex;
         justify-content: space-between;
         color: #064CA1;

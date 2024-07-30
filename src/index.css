@@ -9,6 +9,7 @@
 body{
     position: relative;
     font-family: "Inter", sans-serif;
+    background-color: #051650;
 }
 
 
@@ -29,6 +30,7 @@ h1.title{
 .row{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 
@@ -49,7 +51,7 @@ h1.title{
 
 
 @media screen and (max-width: 1400px) {
-    .container{
+    .contianer{
         max-width: 1140px;
     }
 }

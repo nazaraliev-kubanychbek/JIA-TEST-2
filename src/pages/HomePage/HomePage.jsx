@@ -1,13 +1,14 @@
-import { FifthSection, FirstSection, FourthSection, SecondSection, ThirdSection } from "@components/HomeSections";
+import { SwiperSection, FirstSection, VideosSection, AboutForumSectoins, MainBisnesSection } from "@pages/HomePage/HomeSections";
+import '../../index.css'
 
 export const HomePage = () => {
     return (
-        <div style={{ paddingBottom: '400px', backgroundColor: '#051650'}}>
+        <div style={{ minHeight: '100vh'}}>
             <FirstSection />
-            <SecondSection />
-            <ThirdSection />
-            <FourthSection />
-            <FifthSection />
+            <AboutForumSectoins />
+            <MainBisnesSection />
+            <VideosSection />
+            <SwiperSection />
         </div>
     );
 }
