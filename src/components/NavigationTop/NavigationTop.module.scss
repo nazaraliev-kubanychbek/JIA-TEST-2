@@ -1,3 +1,5 @@
+@import '../../index.module.scss';
+
 .navigation {
     width: 74px;
     height: 74px;
@@ -8,6 +10,15 @@
     border: 5px solid #D3A60D;
     border-radius: 50%;
     padding: 10px;
+    @include respond-to("large") {
+        font-size: 16px;
+    }
+    @include respond-to("medium") {
+        right: 15%;
+    }
+    @include respond-to("betweenSandM") {
+        right: 235px;
+    }
 }
 
 .navigation:hover{
@@ -27,6 +38,15 @@
     width: 74px;
     height: 74px;
     z-index: 9; /* Ensures it's behind the .navigation */
+    @include respond-to("large") {
+        font-size: 16px;
+    }
+    @include respond-to("medium") {
+        right: 15%;
+    }
+    @include respond-to("betweenSandM") {
+        right: 235px;
+    }
 }
 
 .round {
