@@ -1,8 +1,19 @@
+@import '../../../../index.module.scss';
+
 .container{
     width: 100%; 
     background-color: #E7E7E7;
     position: relative;
     height: 940px;
+    @include respond-to('large'){
+        height: 800px;
+    }
+    @include respond-to('medium'){
+        height: 730px;
+    }
+    @include respond-to('small'){
+        height: 650px;
+    }
 
     img{
         width: 100%;
@@ -21,12 +32,23 @@
         transform: translate(-50%);
         overflow: hidden;
         width: 913px;
+        font-size: 32px;
+        
+        
 
         .discription{
             overflow: hidden;
             p{
                 overflow: hidden;
                 font-size: 40px;
+                @include respond-to('large'){
+                    font-size: 30px;
+                }
+                
+                
+                @include respond-to('medium'){
+                    font-size: 18px;
+                }
             }
         }
 
@@ -35,6 +57,14 @@
         h1{
             overflow: hidden;
             font-size: 80px;
+            @include respond-to('large'){
+                font-size: 64px;
+            }
+            
+            @include respond-to("medium"){
+                font-size: 32px;
+            }
         }
+        
     }
 }

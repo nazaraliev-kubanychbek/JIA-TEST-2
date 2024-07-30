@@ -1,9 +1,23 @@
+@import '../../../../../index.module.scss';
+
 .youtube_container {
     position: relative;
     width: 702px;
     height: 400px;
     border-radius: 20px;
     overflow: hidden;
+    @include respond-to("large"){
+        width: 690px;
+        height: 400px;
+    }
+    @include respond-to("large"){
+        width: 690px;
+        height: 400px;
+    }
+    @include respond-to("medium"){
+        width: 370px;
+        height: 218px;
+    }
 
     .play_button {
         width: 100%;

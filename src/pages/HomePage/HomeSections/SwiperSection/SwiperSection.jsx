@@ -7,6 +7,7 @@ import 'swiper.css';
 import imgMan from '@img/q.png';
 import { FreeMode, Navigation, Mousewheel, Keyboard, Autoplay } from 'swiper/modules';
 import { useRef } from 'react';
+import { useMediaQuery } from '@hooks/usemedia/useMedia';
 
 export const SwiperSection = () => {
     const swiperRef = useRef(null);
@@ -45,6 +46,10 @@ export const SwiperSection = () => {
         // ... остальные элементы массива
     ];
 
+    const wMobile = useMediaQuery('(max-width: 700px)');
+    const wTablet = useMediaQuery('(max-width: 1024px)');
+    const wLap = useMediaQuery('(max-width: 1300px)');
+    const preView = wMobile ? '1' : wTablet ? '2' : wLap ? '2.5' : '4';
     return (
         <section className='container'>
             <div className={styles.container}>
@@ -52,7 +57,7 @@ export const SwiperSection = () => {
                 <div className={styles.swiperCont}>
                     <Swiper
                         ref={swiperRef}
-                        slidesPerView={4}
+                        slidesPerView={preView}
                         freeMode={true}
                         loop={true}
                         navigation={false}

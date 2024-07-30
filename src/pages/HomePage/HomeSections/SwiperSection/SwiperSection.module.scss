@@ -1,7 +1,15 @@
+@import '../../../../index.module.scss';
+
 .container {
     width: 100%;
     position: relative;
     margin-bottom: 84px;
+    @include respond-to("medium"){
+        margin-bottom: 50px;
+    }
+    @include respond-to("small"){
+        margin-bottom: 60px;
+    }
 
     h2{
         font-size: 60px;
@@ -9,13 +17,17 @@
         font-weight: 700;
         text-align: center;
         margin-bottom: 40px;
+        @include respond-to("large"){
+            font-size: 40px;
+        }
+        @include respond-to("medium"){
+            margin-bottom: 25px;
+        }
     }
 
     .buttons{
-        margin: 0 100px;
         display: flex;
         justify-content: space-between;
-        
     }
 
     button{
@@ -25,25 +37,44 @@
 
     .prevButton {
         position: absolute;
-        left: -50px;
+        left: -40px;
         top: 50%;
         transform: rotate(180deg) translate(0, -50%);
+        @include respond-to("x-large"){
+            left: -40px;
+        }
+        @include respond-to("large"){
+            left: 5px;
+        }
+        @include respond-to("medium"){
+            left: -5px;
+        }
     }
 
     .nextButton{
         position: absolute;
-        right: -50px;
+        right: -20px;
         top: 50%;
         transform: translate(0, 50%);
+        @include respond-to("x-large"){
+            right: -25px;
+        }
+        @include respond-to("large"){
+            right: 25px;
+        }
+        @include respond-to("medium"){
+            right: 10px;
+        }
     }
 
     .swiperCont {
         margin: 0 auto;
-        width: 1420px;
+        width: 100%;
         overflow: hidden;
         position: relative; 
-
-        
+        @include respond-to("large"){
+            width: 90%;
+        }
 
         .swiperItem {
             text-align: center;
@@ -68,23 +99,6 @@
             }
         }
 
-        .navigation {
-            // position: absolute;
-            // top: 50%;
-            // width: 100%;
-            margin-top: 100px;
-            display: flex;
-            justify-content: space-between;
-            transform: translateY(-50%);
-
-            .prev, .next {
-                background-color: #000;
-                color: #fff;
-                border: none;
-                padding: 10px 20px;
-                cursor: pointer;
-                font-size: 16px;
-            }
-        }
+        
     }
 }

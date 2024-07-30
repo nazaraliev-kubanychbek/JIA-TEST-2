@@ -8,6 +8,7 @@ import insta from '@img/footer/logo_insta.svg';
 import geeks from '@img/footer/geeks.png';
 import styles from './Footer.module.scss'
 import { Link } from 'react-router-dom';
+import { useMediaQuery } from '@hooks/usemedia/useMedia';
 
 
 export const Footer = () => {
@@ -17,16 +18,21 @@ export const Footer = () => {
         // behavior: 'smooth',
         });
     };
+    const w = useMediaQuery('(max-width: 840px)');
     return (
         <footer className={styles.footer}>
             <div className='container'>
                 <div className={styles.container}>
                     <div className={styles.emblem}>
                         <img src={emblem} alt="emblem" />  
-                        <div className={styles.geeks}>
-                            <img src={geeks} alt="geeks" />
-                            <p>WaterMark "Made by Geeks Pro"</p>
-                        </div>
+                        {
+                            !w && 
+                            <div className={styles.geeks}>
+                                <img src={geeks} alt="geeks" />
+                                <p>Made by Geeks Pro</p>
+                            </div>
+                        }
+                        
                     </div>
 
                     <div className={styles.contact}>
@@ -38,8 +44,8 @@ export const Footer = () => {
                     <div className={styles.navigation}>
                         <h3>Навигация</h3>
                         <Link onClick={scrollToTop} to={'/'}><p>О проекте</p></Link>
-                        <Link onClick={scrollToTop} to={'/funds'}><p>Инвесторы</p></Link>
-                        <Link onClick={scrollToTop} to={'/projects'}><p>Инвест.проекты</p></Link>
+                        <Link onClick={scrollToTop} to={'/funds'}><p>Источники финансирования</p></Link>
+                        <Link onClick={scrollToTop} to={'/projects'}><p>Бизнес проекты</p></Link>
                         <Link onClick={scrollToTop} to={'/exhibition'}><p>Выставка</p></Link>
                     </div>
 
@@ -58,6 +64,14 @@ export const Footer = () => {
                             <a target='_balnk' href="https://t.me/bishkekinvestforum"><img src={telegram} alt="telegram" /></a>
                         </div>
                     </div>
+
+                    {
+                        w && 
+                        <div className={styles.geeks}>
+                            <img src={geeks} alt="geeks" />
+                            <p>Made by Geeks Pro</p>
+                        </div>
+                    }
                 </div>
                 
             </div>
