@@ -1,42 +1,25 @@
-import img1 from './img/project1.png';
-import img2 from './img/project2.png';
-import img3 from './img/project3.png';
-import img4 from './img/project4.png';
-import img5 from './img/project5.png';
 
-const projectList = [
-    {
-        img: img1,
-        text: '2015',
-    },
-    {
-        img: img2,
-        text: '2016',
-    },
-    {
-        img: img3,
-        text: '2017',
-    },
-    {
-        img: img4,
-        text: '2019',
-    },
-    {
-        img: img5,
-        text: '2022',
-    },
-]
+
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const BusinessProjects = () => {
+    const [projectList, setProjectList] = useState([]);
+
+    useEffect(()=>{
+        axios('https://bif.webtm.ru/ru/api/v1/project/yearly-catalogs/')
+        .then(({data}) => setProjectList(data));
+    }, [])
     return (
         <div className="businessPage-projects">
+            <div className="businessPage-projects-rightLine"></div>
         <div className="row">
                     {
                         projectList.map(item =>{
-                            return <div key={item.text} className="col-4">
+                            return <div key={item.id} className="col-4">
                                 <div className="businessPage-projects-card">
-                                    <p className="businessPage-projects-card-text">{item.text}</p>
-                                    <img src={item.img} alt="" className="businessPage-projects-card-img" />
+                                    <p className="businessPage-projects-card-text">{item.year}</p>
+                                    <img src={item.image} alt="" className="businessPage-projects-card-img" />
                                 </div>
                             </div>
                         })
