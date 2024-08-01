@@ -114,6 +114,7 @@
     font-weight: 700;
     text-shadow: 0px 0px 50px #FFC727;
     color: #D3A60D;
+  
 }
 
 
@@ -138,7 +139,12 @@
     justify-content: space-between;
     margin-top: 70px;
 }
-
+.history_ages p {
+  text-shadow: 1px 0 #D3A60D, -1px 0 #D3A60D, 0 1px #D3A60D, 0 -1px #D3A60D,
+  1px 1px #D3A60D, -1px -1px #D3A60D, 1px -1px #D3A60D, -1px 1px #D3A60D;
+  color: #051650;
+  font-size: 60px;
+}
 .about_content{
     margin-bottom: 150px;
 }
@@ -226,6 +232,7 @@
   width: 225px;
   height: 255px;
   transition: 0.3s;
+  border-radius: 20px;
 }
 .slider_projects{
   position: relative;
