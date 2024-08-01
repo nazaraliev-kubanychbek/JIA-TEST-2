@@ -49,11 +49,11 @@ export const Header = () => {
               <BurgerMenu />
             ) : (
               <>
-                <Link onClick={() => { scrollToTop(); changeRoute() }} to={route ? '/' : '/aboutProject'}>
+                <Link onClick={() => { scrollToTop(); changeRoute() }} to={route ? '/' : '/projects'}>
                   {route ? 'Главная' : 'О проекте'}
                 </Link>
-                <Link onClick={scrollToTop} to={'/funds'}>Источники Финансирования</Link>
-                <Link onClick={scrollToTop} to={'/projects'}>Бизнес проекты</Link>
+                <Link onClick={scrollToTop} to={'/funds'}>Источники финансирования</Link>
+                <Link onClick={scrollToTop} to={'/business'}>Бизнес проекты</Link>
                 <Link onClick={scrollToTop} to={'/exhibition'}>Выставка</Link>
               </>
             )}

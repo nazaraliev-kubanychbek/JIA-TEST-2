@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import styles from './AboutForumSectoins.module.scss';
+import { ModalSendForm } from '@components/index';
 
 export const AboutForumSectoins = () => {
 
@@ -8,6 +9,8 @@ export const AboutForumSectoins = () => {
     const [ currVal1, setCurrVal1 ] = useState(0);
     const [ currVal2, setCurrVal2 ] = useState(90);
     const [ currVal3, setCurrVal3 ] = useState(0);
+
+    const [openModal, setOpenModal] = useState(false);
 
     const val1 = 20;
     const time = 78; 
@@ -44,7 +47,7 @@ export const AboutForumSectoins = () => {
     };
     }, [ currVal1, currVal2, currVal3, observerRef ]);
 
-
+    // console.log(openModal);
     return (
         <section className='container'>
             <div className={styles.container}>
@@ -68,11 +71,11 @@ export const AboutForumSectoins = () => {
                   </div>
               </div>
 
-              <a target='_blank' href="https://forms.gle/KmxKTQ91qZ9zJrqT8" rel="noreferrer">
-                <button className={styles.button}>Подать проект на BIF 2024</button>
-              </a>
+              {/* <a target='_blank' href="https://forms.gle/KmxKTQ91qZ9zJrqT8" rel="noreferrer"> */}
+                <button onClick={() => setOpenModal(!openModal)} className={styles.button}>Подать проект на BIF 2024</button>
+              {/* </a> */}
             </div>
-            
+            <ModalSendForm openModal={openModal} setOpenModal={setOpenModal} />
         </section>
     );
 }

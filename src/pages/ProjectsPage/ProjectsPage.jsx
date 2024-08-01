@@ -1,5 +1,5 @@
 // import { FirstSection } from "@components/ProjectsSections";
-import bannerImage from "../../img/projectsBanner.png";
+// import bannerImage from "../../img/projectsBanner.png";
 import classes from "./ProjectsPage.module.scss";
 import ages1 from "../../img/projects-ages/2015.svg";
 import ages2 from "../../img/projects-ages/2016.svg";
@@ -13,9 +13,9 @@ import vector_right from "../../img/vector-right.svg";
 import investPrice from "../../img/investPrice.svg";
 import investDiagram from "../../img/investDiagram.svg";
 import "./projectsPage.scss";
-import ProjectsPageHero from "./ProjectsPageHero";
-import ProjectsPageProjects from "./ProjectsPageProjects";
-import ProjectsPageInfo from "./ProjectsPageInfo";
+// import ProjectsPageHero from "./ProjectsPageHero";
+// import ProjectsPageProjects from "./ProjectsPageProjects";
+// import ProjectsPageInfo from "./ProjectsPageInfo";
 import { SwiperSlide,Swiper } from "swiper/react";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -153,6 +153,7 @@ export const ProjectsPage = () => {
               ></iframe>
               <img
                 className={classes.history_lines_video_border}
+                alt="history_lines_video_border"
                 src={projectVideoBorder}
               />
             </div>
@@ -189,6 +190,7 @@ export const ProjectsPage = () => {
               ></iframe>
               <img
                 className={classes.history_lines_video_border}
+                alt="history_lines_video_border"
                 src={projectVideoBorderRight}
                 style={{ left: "24px" }}
               />
@@ -214,11 +216,11 @@ export const ProjectsPage = () => {
           </div>
           <div className={classes.history_lines_footer}>
             <div className={classes.history_lines_footer_item}>
-              <img src={investPrice} alt="" /> Объем привлеченных инвестиций
+              <img src={investPrice} alt="investPrice" /> Объем привлеченных инвестиций
               (USD) - 3082000
             </div>
             <div className={classes.history_lines_footer_item}>
-              <img src={investDiagram} alt="" /> Количество заявленных проектов
+              <img src={investDiagram} alt="investDiagram" /> Количество заявленных проектов
               - 250
             </div>
           </div>
@@ -256,6 +258,7 @@ export const ProjectsPage = () => {
               ></iframe>
               <img
                 className={classes.history_lines_video_border}
+                alt="history_lines_video_border"
                 src={projectVideoBorder}
               />
             </div>
