@@ -181,7 +181,74 @@
                 }
             }
 
+            &-icon{
+                width: 90px;
+            }
+
         }
     }
 
+}
+
+
+
+
+
+@media screen and (max-width: 992px) {
+    .businessPage-projects .col-4,
+    .businessPage-info .col-4{
+        width: 50%;
+    }
+.businessPage{
+    padding-bottom: 150px;
+}
+
+
+}
+
+
+@media screen and (max-width: 768px) {
+    .businessPage-projects .col-4,
+    .businessPage-info .col-4{
+        width: 100%;
+    }
+
+    .businessPage-hero-title,
+    .businessPage-info-title  {
+        font-size: 36px;
+        line-height: 37px;
+    }
+    .businessPage-info-title{
+        margin-top: 120px;
+    }
+    .businessPage-hero-text,
+    .businessPage-info-text{
+        font-size: 18px;
+        line-height: 20px;
+    }
+
+    .businessPage-btn{
+        font-size: 18px;
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .businessPage-hero-title,
+    .businessPage-info-title {
+        font-size: 2rem;
+    }
+
+    .businessPage-info-card{
+        min-height: 285px;
+        height: auto;
+    }
+    .businessPage-projects-card {
+        min-height: auto;
+    }
+
+    .businessPage-info-card-text{
+        font-size: 16px;
+        line-height: 100%;
+    }
 }

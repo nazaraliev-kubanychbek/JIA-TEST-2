@@ -60,11 +60,11 @@ export const FirstSection = () => {
                                 <img className={styles.img} src={item.img} alt="logo" />
                                 <ModalFinancing setOpenModalForm={setOpenModalForm} item={item} openModal={openModal} setOpenModal={setOpenModal} />
                             </div>
-                            
+
                         ))
                     }
                 </div>
-                
+
 
                 <button onClick={() => setOpenModalForm(!openModalForm)} className={styles.button}>Связаться</button>
                 <ModalForm openModalForm={openModalForm} setOpenModalForm={setOpenModalForm} setComplate={setComplate}/>
