@@ -1,37 +1,63 @@
-import icon from './img/projectsIcon.svg';
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 const BusinessInfo = () => {
-    return (
-        <div className='businessPage-info'>
-        <h2 className="businessPage-info-title">Участие открыто для всех предпринимателей с действующим бизнесом!</h2>
-        <p className="businessPage-info-text">Необходимо</p>
+  const [text, setText] = useState({});
+  const [cards, setCards] = useState([]);
 
-        <div className="row">
-            <div className="col-4">
-                <div className="businessPage-info-card">
-                    <img src={icon} alt="" className="businessPage-info-card-icon" />
-                    <p className="businessPage-info-card-text">Предоставить все необходимые документы, подтверждающие законность деятельности юридического лица.</p>
-                </div>
-            </div>
-            <div className="col-4">
-                <div className="businessPage-info-card">
-                    <img src={icon} alt="" className="businessPage-info-card-icon" />
-                    <p className="businessPage-info-card-text">Заполнить анкету до 05.09.2024</p>
-                </div>
-            </div>
-            <div className="col-4">
-                <div className="businessPage-info-card">
-                    <img src={icon} alt="" className="businessPage-info-card-icon" />
-                    <p className="businessPage-info-card-text">
-                        За дополнительной информацией:
-                        <br />
-                        <a href="tel: +996 999 895 362">+996 999 895 362</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
+  const findTel = (text = "") => {
+    if (!text.includes("+")) return { title: text };
+    const idx = text.lastIndexOf("+");
+    const title = text.substr(0, idx);
+    const tel = text.substr(idx);
+    return {
+      title,
+      tel,
+    };
+  };
+
+  useEffect(() => {
+    axios("https://bif.webtm.ru/ru/api/v1/project/business-projects/").then(
+      ({ data }) => setText(data[0])
     );
-}
+
+    axios("https://bif.webtm.ru/ru/api/v1/project/scrolls/").then(({ data }) =>
+      setCards(data)
+    );
+  }, []);
+  return (
+    <div className="businessPage-info">
+      <h2 className="businessPage-info-title">{text.title}</h2>
+      <p className="businessPage-info-text">{text.descriptons}</p>
+
+      <div className="row">
+        {cards.map((item) => (
+          <div className="col-4" key={item.id}>
+            <div className="businessPage-info-card">
+              <img
+                src={item.image}
+                alt=""
+                className="businessPage-info-card-icon"
+              />
+              <p className="businessPage-info-card-text">
+                {findTel(item.title).title}
+                {findTel(item.title).tel ? (
+                <>
+                  <br />
+                  <a href={`tel: ${findTel(item.title).tel}`}>{findTel(item.title).tel}</a>
+                </>
+              ) : (
+                ""
+              )}
+              </p>
+
+            </div>
+          </div>
+        ))}
+
+      </div>
+    </div>
+  );
+};
 
 export default BusinessInfo;

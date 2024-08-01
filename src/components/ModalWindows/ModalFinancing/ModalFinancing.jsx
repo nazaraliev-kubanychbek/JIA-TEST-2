@@ -16,7 +16,7 @@ export const ModalFinancing = ({setOpenModalForm ,openModal, setOpenModal, item}
                         <div className={styles.shortName}>
                             <p className={styles.firstLink}>{title}</p>
                         </div>
-                        
+
                         <p onClick={() => setOpenDescription(true)} className={styles.link}>Подробнее</p>
                     </div>
                 ) : (
@@ -37,11 +37,10 @@ export const ModalFinancing = ({setOpenModalForm ,openModal, setOpenModal, item}
                     </div>
                 )
             }
-            
+
             <div className={styles.button}>
                 <button onClick={() => setOpenModalForm(true)} className={styles.callButton}>Связаться</button>
             </div>
         </div>
     );
 }
-

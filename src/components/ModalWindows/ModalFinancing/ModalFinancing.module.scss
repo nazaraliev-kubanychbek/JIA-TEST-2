@@ -13,6 +13,7 @@
     opacity: 1;
     transition: .5s;
     z-index: 5;
+    overflow: auto;
 
     .block {
         position: absolute;
@@ -23,11 +24,12 @@
         opacity: 1;
         text-align: start;
 
+
         @include respond-to("large"){
             padding: 40px;
             width: 90%;
         }
-        
+
 
         .shortName {
             font-size: 24px;
