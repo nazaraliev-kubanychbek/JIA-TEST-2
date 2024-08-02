@@ -23,6 +23,8 @@ import "swiper.css";
 import image1 from "../../img/sliderImage.png";
 import image2 from "../../img/header/emblem.png";
 import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+
 const getDinamicData = async (url) => {
   const data = (await fetch(url)).json();
   console.log(data);
@@ -31,28 +33,29 @@ const getDinamicData = async (url) => {
 export const ProjectsPage = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState({});
+  const lang = useSelector(s => s.reducer.lang);
   useEffect(() => {
     (async () => {
       try {
         const result = {};
         const data1 = await getDinamicData(
-          "https://bif.webtm.ru/ru/api/v1/about/about/"
+          `https://bif.webtm.ru/${lang}/api/v1/about/about/`
         );
         const data2 = await getDinamicData(
-          "https://bif.webtm.ru/ru/api/v1/about/about_banner/"
+          `https://bif.webtm.ru/${lang}/api/v1/about/about_banner/`
         );
 
         const data4 = await getDinamicData(
-          "https://bif.webtm.ru/ru/api/v1/about/history/"
+          `https://bif.webtm.ru/${lang}/api/v1/about/history/`
         );
         const data5 = await getDinamicData(
-          "https://bif.webtm.ru/ru/api/v1/about/history_detail/"
+          `https://bif.webtm.ru/${lang}/api/v1/about/history_detail/`
         );
         const data6 = await getDinamicData(
-          "https://bif.webtm.ru/ru/api/v1/about/statistics/"
+          `https://bif.webtm.ru/${lang}/api/v1/about/statistics/`
         );
         const data7 = await getDinamicData(
-          "https://bif.webtm.ru/ru/api/v1/about/gallery/"
+          `https://bif.webtm.ru/${lang}/api/v1/about/gallery/`
         );
         console.log("data1", data1);
         result.about = {
@@ -73,7 +76,7 @@ export const ProjectsPage = () => {
         alert("Данные не загрузились !");
       }
     })();
-  }, []);
+  }, [lang]);
   console.log(data);
   return (
     <div
@@ -87,9 +90,7 @@ export const ProjectsPage = () => {
               <div className={classes.projects_banner_content}>
                 <h1 className={classes.banner_title}>{data.banner.title}</h1>
 
-                <div className={classes.projects_banner_date}>
-                  {data.banner.desc}
-                </div>
+
 
                 <div className={classes.projects_banner_advantages}>
                   {/* <div className={classes.projects_banner_advantages_block}> */}
@@ -182,7 +183,7 @@ export const ProjectsPage = () => {
                 const title_content = item.title.slice(4,item.title.length)
                 console.log(title_content,'cont');
                 console.log(age,'age');
-                if(index%2!==0){
+                if(index%2==0){
                   return(<div className={classes.history_lines_block}>
                     <h1 className={classes.history_lines_title}>
                       <span>{age}</span> {title_content}
@@ -262,12 +263,12 @@ export const ProjectsPage = () => {
                   </div>
                 </div>
                 )
-                
+
               })
             }
-          
-            
-            
+
+
+
        </section>
           <h1 className="title" style={{ textAlign: "center", marginTop: 150 }}>
             фотографии
