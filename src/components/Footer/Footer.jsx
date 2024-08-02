@@ -9,9 +9,55 @@ import geeks from '@img/footer/geeks.png';
 import styles from './Footer.module.scss'
 import { Link } from 'react-router-dom';
 import { useMediaQuery } from '@hooks/usemedia/useMedia';
+import { useSelector } from 'react-redux';
+
+const linkText = {
+    main:{
+      ru: 'Главная',
+      en: 'Home',
+      ky: 'Башкы бет',
+    },
+    projects:{
+      ru: 'О проекте',
+      en: 'About project',
+      ky: 'Долбоор жөнүндө',
+    },
+    funds:{
+      ru: 'Источники финансирования',
+      en: 'Sources of financing',
+      ky: 'Каржылоо булактары',
+    },
+    business:{
+      ru: 'Бизнес проекты',
+      en: 'Business projects',
+      ky: 'Бизнес долбоорлор',
+    },
+    exhibition:{
+      ru: 'Выставка',
+      en: 'Exhibition',
+      ky: 'Көргөзмө',
+    },
+    contanct:{
+        ru: 'связаться с нами',
+        en: 'connect with us',
+        ky: 'биз менен байланыш',
+      },
+      navigation:{
+        ru: 'Навигация',
+        en: 'Navigation',
+        ky: 'Навигация',
+      },
+      social:{
+        ru: 'Соц.сети',
+        en: 'Social media',
+        ky: 'Соц. тармактар',
+      },
+  }
 
 
 export const Footer = () => {
+    const lang = useSelector(s => s.reducer.lang);
+
     const scrollToTop = () => {
         window.scrollTo({
         top: 0,
@@ -24,33 +70,34 @@ export const Footer = () => {
             <div className='container'>
                 <div className={styles.container}>
                     <div className={styles.emblem}>
-                        <img src={emblem} alt="emblem" />  
+                        <img src={emblem} alt="emblem" />
                         {
-                            !w && 
+                            !w &&
                             <div className={styles.geeks}>
                                 <img src={geeks} alt="geeks" />
                                 <p>Made by Geeks Pro</p>
                             </div>
                         }
-                        
+
                     </div>
 
                     <div className={styles.contact}>
-                        <a href="https://www.instagram.com/bif.kg/">связаться с нами</a>
+                        <a href="https://www.instagram.com/bif.kg/">{linkText.contanct[lang]}</a>
                         <p><img src={phone} alt="phone" />+996 555 895 362</p>
                         <a target="_blank" href="https://mail.google.com/mail/?view=cm&fs=1&to=bif@jia.kg&su=Тема%20письма&body=Текст%20сообщения" rel="noreferrer"><p><img src={email} alt="email" /> E-mail</p></a>
                     </div>
 
                     <div className={styles.navigation}>
-                        <h3>Навигация</h3>
-                        <Link onClick={scrollToTop} to={'/projects'}><p>О проекте</p></Link>
-                        <Link onClick={scrollToTop} to={'/funds'}><p>Источники финансирования</p></Link>
-                        <Link onClick={scrollToTop} to={'/business'}><p>Бизнес проекты</p></Link>
-                        <Link onClick={scrollToTop} to={'/exhibition'}><p>Выставка</p></Link>
+                        <h3>{linkText.navigation[lang]}</h3>
+                        <Link onClick={scrollToTop} to={'/'}><p>{linkText.main[lang]}</p></Link>
+                        <Link onClick={scrollToTop} to={'/projects'}><p>{linkText.projects[lang]}</p></Link>
+                        <Link onClick={scrollToTop} to={'/funds'}><p>{linkText.funds[lang]}</p></Link>
+                        <Link onClick={scrollToTop} to={'/business'}><p>{linkText.business[lang]}</p></Link>
+                        <Link onClick={scrollToTop} to={'/exhibition'}><p>{linkText.exhibition[lang]}</p></Link>
                     </div>
 
-                    <div className={styles.social_media}> 
-                        <h3>Соц.сети</h3>
+                    <div className={styles.social_media}>
+                        <h3>{linkText.social[lang]}</h3>
                         <div>
                             <a target='_balnk' href="https://api.whatsapp.com/send?%20phone=996555895362">
                                 <img src={whatsapp} alt="whatsapp" />
@@ -66,14 +113,14 @@ export const Footer = () => {
                     </div>
 
                     {
-                        w && 
+                        w &&
                         <div className={styles.geeks}>
                             <img src={geeks} alt="geeks" />
                             <p>Made by Geeks Pro</p>
                         </div>
                     }
                 </div>
-                
+
             </div>
         </footer>
     );
