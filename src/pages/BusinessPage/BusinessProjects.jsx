@@ -1,15 +1,16 @@
 
-
+import { useSelector } from 'react-redux';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 const BusinessProjects = () => {
     const [projectList, setProjectList] = useState([]);
+    const lang = useSelector(s=> s.reducer.lang);
 
     useEffect(()=>{
-        axios('https://bif.webtm.ru/ru/api/v1/project/yearly-catalogs/')
+        axios(`https://bif.webtm.ru/${lang}/api/v1/project/yearly-catalogs/`)
         .then(({data}) => setProjectList(data));
-    }, [])
+    }, [lang])
     return (
         <div className="businessPage-projects">
             <div className="businessPage-projects-rightLine"></div>

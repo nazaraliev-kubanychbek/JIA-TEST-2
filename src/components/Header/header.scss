@@ -18,7 +18,7 @@
             &:first-child{
                 background-image: url('./icons/bifIcon2.svg');
                 background-size: cover;
-              
+
             }
             &:last-child{
                 background-image: url('./icons/greenEconomyIcon2.svg');
@@ -66,11 +66,31 @@
         border: 1px solid #fff;
         padding: 15px 11px;
         cursor: pointer;
+        position: relative;
         &-text {
             font-size: 24px;
             font-weight: 500;
             line-height: 24px;
             letter-spacing: -0.02em;
+        }
+        &-list{
+            position: absolute;
+            padding: 0 11px;
+            top: 55px;
+            width: 100%;
+            left: 0;
+            background-color: #00000066;
+            display: flex;
+            flex-direction: column;
+            row-gap: 15px;
+            height: 0;
+            overflow: hidden;
+            transition: .5s;
+            &-show{
+                padding: 15px 11px;
+                border: 1px solid #fff;
+                height: auto;
+            }
         }
     }
 }

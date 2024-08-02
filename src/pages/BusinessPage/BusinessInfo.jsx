@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useSelector } from 'react-redux';
 
 const BusinessInfo = () => {
   const [text, setText] = useState({});
   const [cards, setCards] = useState([]);
+  const lang = useSelector(s=> s.reducer.lang);
 
   const findTel = (text = "") => {
     if (!text.includes("+")) return { title: text };
@@ -17,14 +19,14 @@ const BusinessInfo = () => {
   };
 
   useEffect(() => {
-    axios("https://bif.webtm.ru/ru/api/v1/project/business-projects/").then(
+    axios(`https://bif.webtm.ru/${lang}/api/v1/project/business-projects/`).then(
       ({ data }) => setText(data[0])
     );
 
-    axios("https://bif.webtm.ru/ru/api/v1/project/scrolls/").then(({ data }) =>
+    axios(`https://bif.webtm.ru/${lang}/api/v1/project/scrolls/`).then(({ data }) =>
       setCards(data)
     );
-  }, []);
+  }, [lang]);
   return (
     <div className="businessPage-info">
       <h2 className="businessPage-info-title">{text.title}</h2>
