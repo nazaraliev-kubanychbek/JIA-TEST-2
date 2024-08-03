@@ -8,7 +8,7 @@ export const FirstSection = () => {
             
             <div className={styles.text}>   
                 <div className={styles.discription}>
-                    <p>О проекте</p>
+                    <p>24-25 октябрь 2024</p>
                 </div>
                 <h1>Бишкек, Кыргызстан</h1>
             </div>

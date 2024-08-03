@@ -17,6 +17,7 @@
         font-weight: 700;
         text-align: center;
         margin-bottom: 40px;
+        text-transform: uppercase;
         @include respond-to("large"){
             font-size: 40px;
         }
@@ -37,9 +38,12 @@
 
     .prevButton {
         position: absolute;
-        left: -40px;
+        left: -60px;
         top: 50%;
         transform: rotate(180deg) translate(0, -50%);
+        background: #051650 ;
+        height: 90px;
+
         @include respond-to("x-large"){
             left: -40px;
         }
@@ -53,8 +57,10 @@
 
     .nextButton{
         position: absolute;
-        right: -20px;
+        right: -60px;
+        height: 90px;
         top: 50%;
+        background: #051650 ;
         transform: translate(0, 50%);
         @include respond-to("x-large"){
             right: -25px;
@@ -66,7 +72,10 @@
             right: 10px;
         }
     }
-
+.slides{
+    position: relative;
+    margin-bottom: 100px;
+}
     .swiperCont {
         margin: 0 auto;
         width: 100%;
@@ -101,4 +110,17 @@
 
         
     }
+}
+
+.leftBorder{
+    position: absolute;
+    top: 20px;
+    left: -50px;
+    height: 102%;
+}
+.rightBorder{
+    position: absolute;
+    top: 20px;
+    right: -50px;   
+    height: 102%;
 }
