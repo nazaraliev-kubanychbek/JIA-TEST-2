@@ -4,7 +4,6 @@
     position: relative;
     width: 702px;
     height: 400px;
-    border-radius: 20px;
     overflow: hidden;
     @include respond-to("large"){
         width: 690px;

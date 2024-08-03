@@ -3,6 +3,7 @@
 .container{
     width: 100%;
     margin-bottom: 160px;
+    position: relative;
     @include respond-to("medium"){
         margin-bottom: 100px;
     }
@@ -12,19 +13,27 @@
 
     .whiteBlock{
         width: 100%;
+    background-image: url('../../../../img/плеер.png');
         background-color: #E7E7E7;
+        background-size: cover;
+        background-repeat: no-repeat;
         padding: 50px 0;
-        border-radius: 80px;
         @include respond-to("medium"){
             border-radius: 40px;
             padding: 20px 0;
         }
+            .blockVideo:last-child{
+                .text{
+                    h2{
+                        top: 0;
+                    }
+                }
 
+            }
         .blockVideo{
             // width: 1400px;
             display: flex;
             justify-content: space-between;
-            align-items: center;
             @include respond-to("x-large"){
                 gap: 40px;
                 flex-direction: column-reverse;
@@ -43,16 +52,21 @@
             }
 
             .text{
-                width: 464px;
+                width: 564px;
                 @include respond-to("x-large"){
                     text-align: center;
                     width: 100%;
                 }
 
                 h2{
-                    color: #051650;
-                    font-size: 60px;
+                    color: #064CA1;
+                    font-size: 57px;
+                    background: #FEFEE3;
+                    width: fit-content;
                     font-weight: 700;
+                    position: relative;
+                    top: -25px;
+                    text-transform: uppercase;
                     @include respond-to("medium"){
                         font-size: 25px;
                     }
@@ -87,7 +101,8 @@
                     color: #00000099;
                     font-size: 20px;
                     text-align: right;
-                    padding-left: 230px;
+                    padding-left: 100px;
+                    margin: 10px 0;
                     @include respond-to("x-large"){
                         padding-left: 0;
                         text-align: center;
@@ -110,4 +125,42 @@
             }
         }
     }
+}
+
+
+.border1{
+    position: absolute;
+    left: -20px;
+    height: 100%;
+    top:30px;
+    width: fit-content;
+
+}
+.border2{
+    position: absolute;
+    right: -30px;
+    height: 100%;
+    top:-30px;
+    width: fit-content;
+
+}
+.border3{
+    position: absolute;
+    left: 0;
+    height: fit-content;
+    top:0;
+    width: fit-content;
+    width: 580px;
+}
+
+.text p p{
+    font-weight: 500;
+    font-size: 20px;
+    color: #00000099;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.text p ul{
+    padding-left: 20px;
 }

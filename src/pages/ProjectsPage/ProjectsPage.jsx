@@ -189,8 +189,8 @@ export const ProjectsPage = () => {
                       <span>{age}</span> {title_content}
                     </h1>
                     <div className={classes.history_lines_block_content}>
-                      <p>
-                        {item.descriptions}
+                      <p dangerouslySetInnerHTML={{__html:item.descriptions}}>
+                        
                       </p>
                       <div className={classes.history_lines_video}>
                         <iframe
