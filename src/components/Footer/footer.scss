@@ -41,6 +41,7 @@ position: relative;
     }
 
     &-nav{
+        position: relative;
         &-title{
             font-size: 20px;
             font-weight: 700;
@@ -83,5 +84,45 @@ position: relative;
     &-geeks-logo{
         display: block;
         margin: 10px auto;
+        position: relative;
+    }
+}
+
+
+
+
+@media screen and (max-width: 992px) {
+    .footer .col-3{
+        width: 50%;
+    }
+    .footer-bif-logo{
+    left: -280px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer-contact,
+    .footer-social{
+        position: relative;
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+
+    .footer-nav{
+        order: 1;
+    }
+    .footer .col-3:first-child{
+        width: 100%;
+    }
+    .footer-bif-logo{
+        height: 65%;
+    }
+    .footer-contact-title{
+        font-size: 14px;
+    }
+    .footer-contact-link{
+        font-size: 12px;
     }
 }

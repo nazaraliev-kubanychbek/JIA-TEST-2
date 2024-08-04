@@ -26,7 +26,11 @@ const ExhibitionSlider = () => {
       <div className="container">
         <Swiper
           ref={swiperRef}
-          slidesPerView={2}
+          slidesPerView={
+            window.screen.width > 576
+            ? 2:
+            1
+          }
           freeMode={true}
           loop={true}
           navigation={false}

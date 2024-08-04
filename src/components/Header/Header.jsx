@@ -9,6 +9,7 @@ import { useMediaQuery } from "@hooks/usemedia/useMedia";
 import { BurgerMenu } from "..";
 import { setLang } from "../../redux/reducer";
 import { useDispatch, useSelector } from "react-redux";
+import burgerIcon from './icons/burger-icon.svg';
 
 const languages = [
   {
@@ -62,6 +63,7 @@ export const Header = () => {
   const [selectedLang, setSeletedLang] = useState(languages[0]);
   const dispatch = useDispatch();
   const lang = useSelector(s => s.reducer.lang);
+  const [showBurger, setShowBurger] = useState(false);
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -86,10 +88,10 @@ export const Header = () => {
         <div className="container">
           <div className="header-top-container">
             <div className="header-top-img">
-              <img src={bifIcon} alt="" />
+              <img  className="header-top-img-img1" src={bifIcon} alt="" />
             </div>
             <div className="header-top-img">
-              <img src={greenEconimyIcon} alt="" />
+              <img className="header-top-img-img2" src={greenEconimyIcon} alt="" />
             </div>
           </div>
         </div>
@@ -97,22 +99,48 @@ export const Header = () => {
 
       <div className="header">
         <div className="container header-container">
-          <div className="header-nav">
-            <Link onClick={scrollToTop} to={"/"}>
+          <div className="header-menu">
+            <div className="burger-btn" onClick={()=>{
+              setShowBurger(!showBurger)
+            }}>
+                <img src={burgerIcon} alt="" />
+            </div>
+          <div className={
+            showBurger
+            ? "header-nav header-nav-show"
+            : "header-nav"
+          }>
+            <Link onClick={()=>{
+              scrollToTop();
+              setShowBurger(false)
+            }} to={"/"}>
               {linkText.main[lang]}
             </Link>
-            <Link onClick={scrollToTop} to={"/projects"}>
+            <Link  onClick={()=>{
+              scrollToTop();
+              setShowBurger(false)
+            }} to={"/projects"}>
              {linkText.projects[lang]}
             </Link>
-            <Link onClick={scrollToTop} to={"/funds"}>
+            <Link onClick={()=>{
+              scrollToTop();
+              setShowBurger(false)
+            }} to={"/funds"}>
               {linkText.funds[lang]}
             </Link>
-            <Link onClick={scrollToTop} to={"/business"}>
+            <Link  onClick={()=>{
+              scrollToTop();
+              setShowBurger(false)
+            }} to={"/business"}>
               {linkText.business[lang]}
             </Link>
-            <Link onClick={scrollToTop} to={"/exhibition"}>
+            <Link  onClick={()=>{
+              scrollToTop();
+              setShowBurger(false)
+            }} to={"/exhibition"}>
               {linkText.exhibition[lang]}
             </Link>
+          </div>
           </div>
 
           <div className="header-lang" onClick={showLang}>

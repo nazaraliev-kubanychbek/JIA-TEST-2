@@ -1,26 +1,29 @@
 .header {
 
 
-    &-top{
+    &-top {
         background: #FEFEE3;
         height: 140px;
-       &-container{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-       }
 
-        &-img{
+        &-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &-img {
             height: 140px;
             display: flex;
             align-items: center;
             justify-content: center;
-            &:first-child{
+
+            &:first-child {
                 background-image: url('./icons/bifIcon2.svg');
                 background-size: cover;
 
             }
-            &:last-child{
+
+            &:last-child {
                 background-image: url('./icons/greenEconomyIcon2.svg');
                 width: 300px;
                 background-size: cover;
@@ -67,13 +70,15 @@
         padding: 15px 11px;
         cursor: pointer;
         position: relative;
+
         &-text {
             font-size: 24px;
             font-weight: 500;
             line-height: 24px;
             letter-spacing: -0.02em;
         }
-        &-list{
+
+        &-list {
             position: absolute;
             padding: 0 11px;
             top: 55px;
@@ -86,11 +91,72 @@
             height: 0;
             overflow: hidden;
             transition: .5s;
-            &-show{
+
+            &-show {
                 padding: 15px 11px;
                 border: 1px solid #fff;
                 height: auto;
             }
         }
+    }
+}
+
+.burger-btn{
+    display: none;
+}
+
+
+@media screen and (max-width: 1400px) {
+    .header-nav {
+        column-gap: 20px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .header-menu {
+        position: relative;
+        width: 90%;
+    }
+
+    .header-nav {
+        position: absolute;
+        width: 100%;
+        top: 77px;
+        background-color: rgba(0, 0, 0, 0.4);
+        height: 0;
+        overflow: hidden;
+        transition: .5s;
+        flex-wrap: wrap;
+        gap: 20px;
+        a{
+            font-size: 20px;
+        }
+        &-show{
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            padding: 15px;
+            opacity: 1;
+            height: auto;
+        }
+    }
+    .burger-btn{
+        display: block;
+    }
+}
+
+@media screen and (max-width: 992px) {}
+
+@media screen and (max-width: 768px) {
+    .header-nav{
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .header-top-img-img1{
+            width: 190px;
+    }
+    .header-top-img-img2{
+        width: 75px;
     }
 }

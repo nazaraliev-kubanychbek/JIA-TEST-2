@@ -1,5 +1,5 @@
 .businessPage {
-    padding: 300px 0;
+    padding: 50px 0;
     padding-top: 200px;
 
     &-btn {
@@ -24,7 +24,10 @@
     }
 
     &-hero {
-
+        padding-top: 50px;
+        background-image: url('./img/bg.png');
+        background-size: cover;
+        min-height: 470px;
         &-title {
             font-family: Inter;
             font-size: 60px;
@@ -45,210 +48,218 @@
             color: #fff;
             margin-bottom: 30px;
         }
+
+        &-wrapper{
+            position: relative;
+
+            &-borderLeft,
+            &-borderRight{
+                position: absolute;
+                top: 40px;
+            }
+            &-borderLeft{
+                left: 0;
+            }
+            &-borderRight{
+                right: 0;
+            }
+        }
     }
 
     &-projects {
-        margin-top: 60px;
-        border-top: 1px solid #fff;
-        position: relative;
+        margin-top: 50px;
+        background: #E7E7E7EE;
 
-        &-rightLine{
-            position: absolute;
-            width: 1px;
-            height: 100%;
-            background-color: #051650;
-            top: 0;
-            right: 0;
+        &-row{
+            gap: 20px;
+            justify-content: center;
+            padding: 50px 35px;
         }
-        &::before {
-            content: "";
-            position: absolute;
-            width: 1px;
-            height: 100%;
-            background-color: #051650;
-            left: 0;
-            top: 0;
-        }
-
-        &::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #fff;
-            height: 1px;
-        }
-
         &-card {
-            padding: 30px 0;
-            display: flex;
-            min-height: 460px;
-            flex-direction: column;
-            justify-content: flex-end;
-
+            padding: 20px 35px;
+            height: 220px;
+            width: 250px;
+            border: 1px solid #064CA1;
             &-img {
                 width: 100%;
-            }
-
-            &-text {
-                font-family: Inter;
-                font-size: 24px;
-                font-weight: 500;
-                line-height: 24px;
-                text-align: center;
-                color: #fff;
-                margin-bottom: 20px;
-            }
-        }
-
-
-
-        .col-4 {
-            border-left: 1px solid white;
-            border-bottom: 1px solid white;
-
-            &:last-child {
-                border-right: 1px solid white;
-            }
-        }
-    }
-
-    &-info {
-
-        &-title {
-            font-family: Inter;
-            font-size: 60px;
-            font-weight: 700;
-            line-height: 66px;
-            letter-spacing: -0.06em;
-            text-align: center;
-            color: #EDB71B;
-            margin-top: 160px;
-        }
-
-        &-text {
-            font-family: Inter;
-            font-size: 30px;
-            font-weight: 500;
-            line-height: 30px;
-            text-align: center;
-            color: #fff;
-            margin: 20px 0;
-        }
-
-        &-card {
-            margin-top: 20px;
-            height: 285px;
-            padding: 40px 12px;
-            text-align: center;
-            background: radial-gradient(100% 100% at 100% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
-            border-radius: 20px;
-            border-left: 1px solid #FFC727;
-            border-right: 1px solid #FFF;
-            position: relative;
-            overflow: hidden;
-
-            &::before,
-            &::after {
-                content: '';
-                position: absolute;
-                width: 100%;
-                height: 1px;
-                top: 0;
-                left: 0;
-                background: rgb(255, 199, 39);
-                background: linear-gradient(90deg, rgba(255, 199, 39, 0.8) 20%, rgba(255, 255, 255, 1) 80%);
-            }
-
-            &::after {
-                top: auto;
-                bottom: 0;
+                height: 137px;
+                object-fit: cover;
             }
 
             &-text {
                 font-family: Inter;
                 font-size: 20px;
                 font-weight: 500;
-                line-height: 20px;
+                line-height: 100%;
                 text-align: center;
-                color: #FFF;
+                color: #064CA1;
                 margin-top: 20px;
-
-                a {
-                    color: #FFF;
-                    text-decoration: none;
-                }
             }
-
-            &-icon{
-                width: 90px;
-            }
-
         }
+
+
+
     }
+
+    // &-info {
+
+    //     &-title {
+    //         font-family: Inter;
+    //         font-size: 60px;
+    //         font-weight: 700;
+    //         line-height: 66px;
+    //         letter-spacing: -0.06em;
+    //         text-align: center;
+    //         color: #EDB71B;
+    //         margin-top: 160px;
+    //     }
+
+    //     &-text {
+    //         font-family: Inter;
+    //         font-size: 30px;
+    //         font-weight: 500;
+    //         line-height: 30px;
+    //         text-align: center;
+    //         color: #fff;
+    //         margin: 20px 0;
+    //     }
+
+    //     &-card {
+    //         margin-top: 20px;
+    //         height: 285px;
+    //         padding: 40px 12px;
+    //         text-align: center;
+    //         background: radial-gradient(100% 100% at 100% 0%, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
+    //         border-radius: 20px;
+    //         border-left: 1px solid #FFC727;
+    //         border-right: 1px solid #FFF;
+    //         position: relative;
+    //         overflow: hidden;
+
+    //         &::before,
+    //         &::after {
+    //             content: '';
+    //             position: absolute;
+    //             width: 100%;
+    //             height: 1px;
+    //             top: 0;
+    //             left: 0;
+    //             background: rgb(255, 199, 39);
+    //             background: linear-gradient(90deg, rgba(255, 199, 39, 0.8) 20%, rgba(255, 255, 255, 1) 80%);
+    //         }
+
+    //         &::after {
+    //             top: auto;
+    //             bottom: 0;
+    //         }
+
+    //         &-text {
+    //             font-family: Inter;
+    //             font-size: 20px;
+    //             font-weight: 500;
+    //             line-height: 20px;
+    //             text-align: center;
+    //             color: #FFF;
+    //             margin-top: 20px;
+
+    //             a {
+    //                 color: #FFF;
+    //                 text-decoration: none;
+    //             }
+    //         }
+
+    //         &-icon{
+    //             width: 90px;
+    //         }
+
+    //     }
+    // }
 
 }
 
 
+@media screen and (max-width: 1400px) {
+    .businessPage-hero-wrapper-borderLeft,
+    .businessPage-hero-wrapper-borderRight{
+        width: 300px;
+    }
 
+    .businessPage{
+        &-projects{
+            &-card{
+                width: 180px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .businessPage-hero-wrapper-borderLeft,
+    .businessPage-hero-wrapper-borderRight{
+        width: 225px;
+    }
+    .businessPage-projects-card {
+        width: 145px;
+        height: 220px;
+        padding: 20px 10px;
+    }
+    .businessPage-hero-text{
+        width: 80%;
+        margin: 0 auto;
+    }
+}
 
 
 @media screen and (max-width: 992px) {
-    .businessPage-projects .col-4,
-    .businessPage-info .col-4{
-        width: 50%;
+    .businessPage-hero-wrapper-borderLeft,
+    .businessPage-hero-wrapper-borderRight{
+        width: 150px;
     }
-.businessPage{
-    padding-bottom: 150px;
-}
 
-
+    .businessPage-hero-title{
+        font-size: 40px;
+    }
+    .businessPage-hero-text{
+        font-size: 22px;
+    }
 }
 
 
 @media screen and (max-width: 768px) {
-    .businessPage-projects .col-4,
-    .businessPage-info .col-4{
-        width: 100%;
+    .businessPage-hero {
+        height: auto;
+    }
+    .businessPage-hero-wrapper-borderLeft,
+    .businessPage-hero-wrapper-borderRight{
+       display: none;
     }
 
-    .businessPage-hero-title,
-    .businessPage-info-title  {
-        font-size: 36px;
-        line-height: 37px;
-    }
-    .businessPage-info-title{
-        margin-top: 120px;
-    }
-    .businessPage-hero-text,
-    .businessPage-info-text{
-        font-size: 18px;
-        line-height: 20px;
+    .businessPage-hero-title{
+        font-size: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 10px;
+        &::before,
+        &::after{
+            content: "";
+            display: inline-block;
+            width: 44px;
+            height: 1px;
+            background-color: #D3A60D;
+        }
     }
 
-    .businessPage-btn{
-        font-size: 18px;
-        padding: 10px 20px;
-    }
+
 }
 
 @media screen and (max-width: 576px){
-    .businessPage-hero-title,
-    .businessPage-info-title {
-        font-size: 2rem;
+    .businessPage-hero-title{
+        font-size: 30px;
+        line-height: 30px;
     }
-
-    .businessPage-info-card{
-        min-height: 285px;
-        height: auto;
-    }
-    .businessPage-projects-card {
-        min-height: auto;
-    }
-
-    .businessPage-info-card-text{
-        font-size: 16px;
-        line-height: 100%;
+    .businessPage-hero-text{
+        font-size: 18px;
+        width: 100%;
     }
 }
