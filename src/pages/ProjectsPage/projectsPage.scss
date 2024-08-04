@@ -176,10 +176,11 @@
 }
 
 .swiper_projects_container .swiper-slide-next img{
-    width:450px !important;
+    width:910px !important;
     height: 510px !important;
+    object-fit: cover;
   }
-  
+
   .swiper_projects_container .swiper-wrapper{
     align-items: center;
   }

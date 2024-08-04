@@ -96,6 +96,7 @@ export const Footer = () => {
            </div>
           </div>
           <div className="col-3">
+            <div className="footer-nav">
             <h3 className="footer-nav-title">{linkText.navigation[lang]}</h3>
             <Link className="footer-nav-link" onClick={scrollToTop} to={"/"}>
               <p>{linkText.main[lang]}</p>
@@ -112,8 +113,10 @@ export const Footer = () => {
             <Link className="footer-nav-link" onClick={scrollToTop} to={"/exhibition"}>
               <p>{linkText.exhibition[lang]}</p>
             </Link>
+            </div>
           </div>
           <div className="col-3">
+            <div className="footer-social">
             <h3 className="footer-social-title">{linkText.social[lang]}</h3>
             <div className="footer-social-links">
               <a
@@ -134,6 +137,7 @@ export const Footer = () => {
               <a target="_balnk" href="https://t.me/bishkekinvestforum">
                 <img src={telegram} alt="telegram" />
               </a>
+            </div>
             </div>
           </div>
         </div>

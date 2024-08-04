@@ -77,10 +77,9 @@ export const ProjectsPage = () => {
       }
     })();
   }, [lang]);
-  console.log(data);
   return (
     <div
-      style={{ width: "100%", backgroundColor: "#051650" }}
+      style={{ width: "100%", minHeight:'100vh', backgroundColor: "#051650" }}
       className="projects_page"
     >
       {!loading ? (
@@ -120,9 +119,8 @@ export const ProjectsPage = () => {
             </h1>
 
             <div className={classes.about_content}>
-              <div className={classes.about_logo}>BIF</div>
-              <p className={classes.about_text_content}>
-                {data.about.desc}
+              <p className={classes.about_text_content} dangerouslySetInnerHTML= {{__html:data.about.desc}}>
+
                 {/* Бишкекский Инвестиционный Форум - эта площадка, где встречаются МСБ
             с крупным бизнесом, внутренними и зарубежными инвесторами,
             представителями парламентариев и государственных структур,
@@ -190,7 +188,7 @@ export const ProjectsPage = () => {
                     </h1>
                     <div className={classes.history_lines_block_content}>
                       <p dangerouslySetInnerHTML={{__html:item.descriptions}}>
-                        
+
                       </p>
                       <div className={classes.history_lines_video}>
                         <iframe
@@ -247,10 +245,8 @@ export const ProjectsPage = () => {
                         style={{ left: "24px" }}
                       />
                     </div>
-                    <p>
-                     {
-                      item.descriptions
-                     }
+                    <p dangerouslySetInnerHTML={{__html:item.descriptions}}>
+                   
                     </p>
                   </div>
                   <div className={classes.history_lines_footer}>
@@ -270,7 +266,7 @@ export const ProjectsPage = () => {
 
 
        </section>
-          <h1 className="title" style={{ textAlign: "center", marginTop: 150 }}>
+          <h1 className={classes.projects_photo_title + ' title'} style={{ textAlign: "center", marginTop: 150 }}>
             фотографии
           </h1>
           <div className={classes.swiper_projects_wrap}>
@@ -279,11 +275,13 @@ export const ProjectsPage = () => {
                 classes.slider_projects + " container swiper_projects_container"
               }
             >
-              <div className={classes.emblem}>
-                <img src={image2} alt="" />
-              </div>
 
-              <Swiper slidesPerView={3}>
+
+              <Swiper slidesPerView={
+                window.screen.width > 1200
+                ? 2.5
+                : 2
+              }>
               {
                 data.images.map((item)=>{
                   console.log(item)
