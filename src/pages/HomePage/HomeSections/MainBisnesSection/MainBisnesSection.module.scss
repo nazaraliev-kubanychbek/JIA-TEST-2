@@ -127,3 +127,10 @@
         }
     }
 }
+
+
+@media screen and (max-width: 1450px) {
+    .present_right_border,.present_left_border{
+        display: none;
+    }
+}

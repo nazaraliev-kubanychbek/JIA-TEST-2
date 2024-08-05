@@ -31,10 +31,9 @@
         left: 50%;
         transform: translate(-50%);
         overflow: hidden;
-        width: 980px;
         font-size: 32px;
         text-transform: uppercase;
-        width: 980px;
+        max-width: 980px;
         .discription{
             overflow: hidden;
             p{
