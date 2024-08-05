@@ -3,15 +3,18 @@ import YouTubePlayer from './YouTubePlayer/YouTubePlayer';
 import border1 from '@img/videoSec1.svg'
 import border2 from '@img/videoSec2.svg'
 import border3 from '@img/videoSec3.svg'
-
+import border_response1 from '@img/border_response.svg'
+import border_response_mobile1 from '@img/border_response_mobile.svg'
 export const VideosSection = () => {
     return (
         <section className={styles.container}>
             <div className={styles.whiteBlock}>
-                <div className='container'style={{position:'relative'}}>
+                <div className={'container'+' '+styles.center}style={{position:'relative'}}>
 <img src={border1} alt="" className={styles.border1} />
 <img src={border2} alt="" className={styles.border2} />
 <img src={border3} alt="" className={styles.border3} />
+<img src={border_response1} alt="" className={styles.border_response} />
+<img src={border_response_mobile1} alt="" className={styles.border_response_mobile} />
                     <div className={styles.blockVideo}>
                         <div className={styles.text}>
                             <h2>BIF 2022</h2>

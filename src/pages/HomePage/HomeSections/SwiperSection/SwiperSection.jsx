@@ -19,6 +19,7 @@ import { useMediaQuery } from "@hooks/usemedia/useMedia";
 
 export const SwiperSection = () => {
   const swiperRef = useRef(null);
+  const swiperRef2 = useRef(null);
 
   const arrSwiper = [
     {
@@ -95,7 +96,7 @@ export const SwiperSection = () => {
 
           <div className={styles.buttons}>
             <button
-              className={styles.prevButton}
+              className={styles.prevButtonOne}
               onClick={() => swiperRef.current.swiper.slidePrev()}
             >
               <svg
@@ -112,7 +113,7 @@ export const SwiperSection = () => {
               </svg>
             </button>
             <button
-              className={styles.nextButton}
+              className={styles.nextButtonOne}
               onClick={() => swiperRef.current.swiper.slideNext()}
             >
               <svg
@@ -135,7 +136,7 @@ export const SwiperSection = () => {
           <h2>Спонсоры и партнеры</h2>
           <div className={styles.swiperCont}>
             <Swiper
-              ref={swiperRef}
+              ref={swiperRef2}
               slidesPerView={preView}
               freeMode={true}
               loop={true}
@@ -163,7 +164,7 @@ export const SwiperSection = () => {
           <div className={styles.buttons}>
             <button
               className={styles.prevButton}
-              onClick={() => swiperRef.current.swiper.slidePrev()}
+              onClick={() => swiperRef2.current.swiper.slidePrev()}
             >
               <svg
                 width="18"
@@ -180,7 +181,7 @@ export const SwiperSection = () => {
             </button>
             <button
               className={styles.nextButton}
-              onClick={() => swiperRef.current.swiper.slideNext()}
+              onClick={() => swiperRef2.current.swiper.slideNext()}
             >
               <svg
                 width="18"

@@ -1,5 +1,10 @@
 @import '../../../../index.module.scss';
-
+.border_response{
+    display: none;
+}
+.border_response_mobile{
+    display: none;
+}
 .container{
     width: 100%;
     margin-bottom: 160px;
@@ -19,8 +24,7 @@
         background-repeat: no-repeat;
         padding: 50px 0;
         @include respond-to("medium"){
-            border-radius: 40px;
-            padding: 20px 0;
+            padding: 30px 10px;
         }
             .blockVideo:last-child{
                 .text{
@@ -54,7 +58,7 @@
             .text{
                 width: 564px;
                 @include respond-to("x-large"){
-                    text-align: center;
+
                     width: 100%;
                 }
 
@@ -105,7 +109,7 @@
                     margin: 10px 0;
                     @include respond-to("x-large"){
                         padding-left: 0;
-                        text-align: center;
+                        // text-align: center;
                     }
                     @include respond-to("large"){
                         font-size: 18px;
@@ -163,4 +167,87 @@
 
 .text p ul{
     padding-left: 20px;
+}
+
+@media screen and (max-width: 1450px) {
+
+    .whiteBlock{
+        .center{
+            // align-items: center;
+            display: flex;  
+            flex-direction: column; 
+            // padding:0 70px 0 70px;
+            // margin: 0 auto;
+        }
+        .border1{
+            display: none;
+        }
+        .border3{
+            display: none;
+        }
+     .border2{
+        height: auto;
+        width: auto;
+        top: 700px;
+        right: -35px;
+     }
+        .border_response{
+            display: block;
+            position: absolute;
+            top: 20px;
+            left: -35px;
+        }
+        .blockVideo:nth-child(6){
+            width: fit-content;
+            flex-direction: column-reverse;
+            margin-bottom: 150px;
+            .text{
+                h2{
+                    top: 0;
+                }
+            }
+        }
+        .blockVideo:nth-child(7){
+            flex-direction: column;
+            width: fit-content;
+            margin-left: auto;
+            align-items: end    ;
+            text-align: right !important;
+            .text{
+                display: flex;
+                flex-direction: column;
+                align-items: end;
+            }
+        }
+    }
+}
+
+
+
+
+@media screen and (max-width: 1000px) {
+
+    .whiteBlock{
+        .border_response{
+            display: none;
+        }
+        .border2{
+            display: none;
+        }
+        .border_response_mobile{
+            position: absolute;
+            top: 20px;
+            display: block;
+            left: -10px;
+            height: 100%;
+        }
+        .blockVideo:nth-child(6){
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+        .blockVideo:nth-child(7){
+            flex-direction: column-reverse;
+        }
+            
+    }
 }

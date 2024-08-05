@@ -12,7 +12,7 @@
     }
 
     h2{
-        font-size: 60px;
+        font-size: 55px;
         color: #EDB71B;
         font-weight: 700;
         text-align: center;
@@ -36,9 +36,9 @@
         border: none;
     }
 
-    .prevButton {
+    .prevButton,.prevButtonOne {
         position: absolute;
-        left: -60px;
+        left: -30px;
         top: 50%;
         transform: rotate(180deg) translate(0, -50%);
         background: #051650 ;
@@ -55,9 +55,9 @@
         }
     }
 
-    .nextButton{
+    .nextButton,.nextButtonOne{
         position: absolute;
-        right: -60px;
+        right: -30px;
         height: 90px;
         top: 50%;
         background: #051650 ;
@@ -115,12 +115,21 @@
 .leftBorder{
     position: absolute;
     top: 20px;
-    left: -50px;
+    left: -30px;
     height: 102%;
 }
 .rightBorder{
     position: absolute;
     top: 20px;
-    right: -50px;   
+    right: -30px;   
     height: 102%;
+}
+
+@media screen and (max-width:1400px){
+        .leftBorder{
+            display: none;
+        }
+        .rightBorder{
+            display: none;
+        }
 }

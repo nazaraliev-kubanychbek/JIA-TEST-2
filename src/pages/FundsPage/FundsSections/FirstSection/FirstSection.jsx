@@ -52,7 +52,7 @@ export const FirstSection = () => {
     return (
         <section className='container'>
             <div className={styles.container}>
-                <img className={styles.imageGraph} src={graph} alt="BgGraph" />
+                {/* <img className={styles.imageGraph} src={graph} alt="BgGraph" /> */}
                 <div className={styles.logoContainer}>
                     {
                         arrTable?.map(item => (
