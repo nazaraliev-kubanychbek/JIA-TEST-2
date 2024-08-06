@@ -38,6 +38,8 @@
             // width: 1400px;
             display: flex;
             justify-content: space-between;
+            position: relative;
+            z-index: 1;
             @include respond-to("x-large"){
                 gap: 40px;
                 flex-direction: column-reverse;
@@ -93,9 +95,9 @@
                 @include respond-to("x-large"){
                     width: 100%;
                 }
-    
+
                 h2{
-                    text-align: right;     
+                    text-align: right;
                     @include respond-to("x-large"){
                         text-align: center;
                     }
@@ -174,8 +176,8 @@
     .whiteBlock{
         .center{
             // align-items: center;
-            display: flex;  
-            flex-direction: column; 
+            display: flex;
+            flex-direction: column;
             // padding:0 70px 0 70px;
             // margin: 0 auto;
         }
@@ -240,6 +242,7 @@
             display: block;
             left: -10px;
             height: 100%;
+            width: 100%;
         }
         .blockVideo:nth-child(6){
             flex-direction: column;
@@ -248,6 +251,6 @@
         .blockVideo:nth-child(7){
             flex-direction: column-reverse;
         }
-            
+
     }
 }

@@ -9,7 +9,7 @@ export const HomePage = () => {
             <MainBisnesSection />
             <VideosSection />
             <SwiperSection />
+           
         </div>
     );
 }
-

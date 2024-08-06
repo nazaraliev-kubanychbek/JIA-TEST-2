@@ -1,18 +1,28 @@
 import styles from './FirstSection.module.scss';
 import bgImg from '@img/homepageImg/MainPage.jpg'
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useSelector } from 'react-redux';
+import { background } from '@img/BIF2016.webp';
 
 export const FirstSection = () => {
+    const [data, setData] = useState({});
+    const lang = useSelector(s => s.reducer.lang);
+
+    useEffect(()=>{
+        axios(`https://bif.webtm.ru/${lang}/api/v1/base/banner/`)
+        .then(({data}) => setData(data[0]))
+    }, [lang])
     return (
         <section className={styles.container}>
-            <img width={2000} src={bgImg} alt="" />
-            
-            <div className={styles.text}>   
-                <div className={styles.discription}>
-                    <p>24-25 октябрь 2024</p>
+<img src={data.image} alt="" />
+            <div className={styles.text}>
+                <div className={styles.discriptions}>
+                    <p>{data.title}</p>
                 </div>
-                <h1>Бишкек, Кыргызстан</h1>
+                <h1>{data.descriptions}</h1>
+
             </div>
         </section>
     );
 }
-
