@@ -3,12 +3,14 @@ import styles from "./ModalForm.module.scss";
 import { motion, AnimatePresence } from "framer-motion";
 import { useMediaQuery } from "@hooks/usemedia/useMedia";
 import { Value } from "sass";
+import { ConfirmModal } from "@components/index";
 
 export const ModalForm = ({ openModalForm, setOpenModalForm, setComplate }) => {
   const [isLegalVisible, setLegalVisible] = useState(false);
   const [isSectorVisible, setSectorVisible] = useState(false);
   const [legalChoice, setLegalChoice] = useState("");
   const [sectorChoice, setSectorChoice] = useState("");
+  const [confirm,setConfirm] = useState(false)
   const [sendData, setSendData] = useState({
     full_name: "",
     name_company: "",
@@ -76,6 +78,9 @@ export const ModalForm = ({ openModalForm, setOpenModalForm, setComplate }) => {
         "https://bif.webtm.ru/ru/api/v1/financing/reach/",
         params
       );
+      if(res.ok){
+        setConfirm(true)
+      }
       const data =await res.json();
       console.log(data);
     } catch {
@@ -97,6 +102,11 @@ export const ModalForm = ({ openModalForm, setOpenModalForm, setComplate }) => {
       onClick={() => setOpenModalForm(!openModalForm)}
       className={styles.open}
     >
+      {
+        confirm?
+        <ConfirmModal setConfirm={setConfirm}/>
+        :''
+      }
       <div className={styles.open_wrap}>
       <div
         onClick={(event) => event.stopPropagation()}
