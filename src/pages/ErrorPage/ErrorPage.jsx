@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ErrorPage.module.scss';
 import { Link } from 'react-router-dom';
-import error from '../../img/error/404.svg';
+import error from './img/404.svg';
 
 export const ErrorPage = () => {
     return (
@@ -12,4 +12,3 @@ export const ErrorPage = () => {
         </section>
     );
 }
-

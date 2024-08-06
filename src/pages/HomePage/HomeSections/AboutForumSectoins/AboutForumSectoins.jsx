@@ -8,6 +8,7 @@ export const AboutForumSectoins = () => {
     const lang = useSelector(s => s.reducer.lang);
     const [text, setText] = useState({});
     const [statistic, setStatistic] = useState([]);
+    const [buttonText, setButtonText] = useState({});
     const observerRef = useRef(null);
 
     const [ currVal1, setCurrVal1 ] = useState(0);
@@ -55,7 +56,9 @@ export const AboutForumSectoins = () => {
     axios(`https://bif.webtm.ru/${lang}/api/v1/base/about_the_forum/`)
     .then(({data}) => setText(data[0]));
     axios( `https://bif.webtm.ru/${lang}/api/v1/about/statistics/`)
-    .then(({data})=> setStatistic(data))
+    .then(({data})=> setStatistic(data));
+    axios(`https://bif.webtm.ru/${lang}/api/v1/base/button/`)
+    .then(({data})=> setButtonText(data[0]));
    }, [lang])
     return (
         <section className='container'>
@@ -78,7 +81,7 @@ export const AboutForumSectoins = () => {
               </div>
 
               {/* <a target='_blank' href="https://forms.gle/KmxKTQ91qZ9zJrqT8" rel="noreferrer"> */}
-                <button onClick={() => setOpenModal(!openModal)} className={styles.button}>Подать проект на BIF 2024</button>
+                <button onClick={() => setOpenModal(!openModal)} className={styles.button}>{buttonText.title}</button>
               {/* </a> */}
             </div>
             <ModalSendForm openModal={openModal} setOpenModal={setOpenModal} />

@@ -80,7 +80,10 @@
         margin: 0 auto;
         width: 100%;
         overflow: hidden;
-        position: relative; 
+        position: relative;
+        &_reverse{
+            transform: rotate(180deg);
+        }
         @include respond-to("large"){
             width: 90%;
         }
@@ -88,7 +91,9 @@
         .swiperItem {
             text-align: center;
             margin-right: 20px;
-
+            &_reverse{
+                transform: rotate(180deg);
+            }
             p {
                 color: #FFFFFF;
                 font-size: 30px;
@@ -108,8 +113,15 @@
             }
         }
 
-        
+
     }
+}
+
+.swiderLine{
+    width: 100%;
+    height: 1px;
+    background-color: #D3A60D;
+    margin: 55px 0;
 }
 
 .leftBorder{
@@ -121,7 +133,7 @@
 .rightBorder{
     position: absolute;
     top: 20px;
-    right: -30px;   
+    right: -30px;
     height: 102%;
 }
 
@@ -132,4 +144,11 @@
         .rightBorder{
             display: none;
         }
+}
+
+
+@media screen and (max-width:576px) {
+    .swiderLine{
+        display: none;
+    }
 }

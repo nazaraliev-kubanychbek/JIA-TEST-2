@@ -4,7 +4,7 @@ import styles from './ModalComplate.module.scss';
 export const ModalComplate = ({ openModalComplate, setOpenModalComplate }) => {
     if(!openModalComplate)  {
         return null;
-    } 
+    }
     return (
         <div onClick={() => setOpenModalComplate(!openModalComplate)} className={styles.open}>
             <div onClick={event => event.stopPropagation()} className={styles.block}>
@@ -18,4 +18,3 @@ export const ModalComplate = ({ openModalComplate, setOpenModalComplate }) => {
         </div>
     );
 }
-

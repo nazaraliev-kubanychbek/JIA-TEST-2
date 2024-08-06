@@ -21,7 +21,7 @@ export const ModalForm = ({ openModalForm, setOpenModalForm, setComplate }) => {
   const [data,setData]= useState({})
 
   console.log(data);
-  
+
   useEffect(()=>{
     (async()=>{
       try{
@@ -32,10 +32,10 @@ export const ModalForm = ({ openModalForm, setOpenModalForm, setComplate }) => {
         setData({...data,legal_names:res_data1,sectors:res_data2})
       }catch(err){
         console.error(err);
-      }     
+      }
     })()
   },[])
-  
+
   const hundlerLegalVisible = () => {
     setLegalVisible(!isLegalVisible);
   };
@@ -54,7 +54,7 @@ export const ModalForm = ({ openModalForm, setOpenModalForm, setComplate }) => {
   const submitForm = async (event) => {
     event.stopPropagation();
     console.log(sendData);
-    
+
     const check =
       sendData.full_name.length &&
       sendData.name_company.length &&
@@ -181,7 +181,7 @@ export const ModalForm = ({ openModalForm, setOpenModalForm, setComplate }) => {
                         {item.name}
                       </p>
                       }
-          
+
                     }):''
                   }
                 </motion.div>
@@ -258,13 +258,13 @@ export const ModalForm = ({ openModalForm, setOpenModalForm, setComplate }) => {
             </AnimatePresence>
           </form>
         </div>
-   
+
       </div>
       <div className={styles.button}>
         <button onClick={submitForm} className={styles.callButton}>
           Связаться
         </button>
-      </div>          
+      </div>
       </div>
 
     </div>

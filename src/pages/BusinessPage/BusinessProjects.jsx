@@ -1,6 +1,7 @@
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import pdfICon from './img/pdfIcon.svg';
 
 const BusinessProjects = () => {
   const [projectList, setProjectList] = useState([]);
@@ -18,11 +19,13 @@ const BusinessProjects = () => {
           {projectList.map((item) => {
             return (
                 <div key={item.id} className="businessPage-projects-card">
-                  <img
-                    src={item.image}
+                 <a href={item.image} target="_blank">
+                 <img
+                    src={pdfICon}
                     alt=""
                     className="businessPage-projects-card-img"
                   />
+                 </a>
                   <p className="businessPage-projects-card-text">{item.year}</p>
                 </div>
             );
