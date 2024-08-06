@@ -16,6 +16,24 @@ export const ModalForm = ({ openModalForm, setOpenModalForm, setComplate }) => {
     brief_description: "",
     sector: "",
   });
+  const [data,setData]= useState({})
+
+  console.log(data);
+  
+  useEffect(()=>{
+    (async()=>{
+      try{
+        const res1 = await fetch('https://bif.webtm.ru/ru/api/v1/financing/legal-names/')
+        const res_data1 =await res1.json()
+        const res2 = await fetch('https://bif.webtm.ru/ru/api/v1/financing/sectors/')
+        const res_data2 =await res2.json()
+        setData({...data,legal_names:res_data1,sectors:res_data2})
+      }catch(err){
+        console.error(err);
+      }     
+    })()
+  },[])
+  
   const hundlerLegalVisible = () => {
     setLegalVisible(!isLegalVisible);
   };
@@ -33,12 +51,14 @@ export const ModalForm = ({ openModalForm, setOpenModalForm, setComplate }) => {
 
   const submitForm = async (event) => {
     event.stopPropagation();
+    console.log(sendData);
+    
     const check =
       sendData.full_name.length &&
       sendData.name_company.length &&
-      sendData.legal_name.length &&
+      sendData.legal_name &&
       sendData.brief_description.length &&
-      sendData.sector.length;
+      sendData.sector;
     console.log(check);
     if (!check) {
       alert("Вы не заполнили все поля !");
@@ -56,7 +76,7 @@ export const ModalForm = ({ openModalForm, setOpenModalForm, setComplate }) => {
         "https://bif.webtm.ru/ru/api/v1/financing/reach/",
         params
       );
-      const data = res.json();
+      const data =await res.json();
       console.log(data);
     } catch {
       alert("Проблемы с сетью !");
@@ -77,6 +97,7 @@ export const ModalForm = ({ openModalForm, setOpenModalForm, setComplate }) => {
       onClick={() => setOpenModalForm(!openModalForm)}
       className={styles.open}
     >
+      <div className={styles.open_wrap}>
       <div
         onClick={(event) => event.stopPropagation()}
         className={styles.block}
@@ -104,7 +125,7 @@ export const ModalForm = ({ openModalForm, setOpenModalForm, setComplate }) => {
             />
 
             <div onClick={hundlerLegalVisible} className={styles.select}>
-              {legalChoice.length ? legalChoice : "Юридическое название"}
+              {legalChoice.length ? data.legal_names[0].name : "Юридическое название"}
               <span
                 style={
                   isLegalVisible
@@ -135,51 +156,24 @@ export const ModalForm = ({ openModalForm, setOpenModalForm, setComplate }) => {
                   animate={{ height: "auto" }}
                   exit={{ height: 0 }}
                 >
-                  <p
-                    onClick={() => {
-                      setLegalChoice("ОсОО");
-                      hundlerLegalVisible();
-                      changeSendData("OcOO", "legal_name");
-                    }}
-                  >
-                    ОсОО
-                  </p>
-                  <p
-                    onClick={() => {
-                      setLegalChoice("АО");
-                      hundlerLegalVisible();
-                      changeSendData("АО", "legal_name");
-                    }}
-                  >
-                    АО
-                  </p>
-                  <p
-                    onClick={() => {
-                      setLegalChoice("ЗАО");
-                      hundlerLegalVisible();
-                      changeSendData("ЗАО", "legal_name");
-                    }}
-                  >
-                    ЗАО
-                  </p>
-                  <p
-                    onClick={() => {
-                      setLegalChoice("КХ");
-                      hundlerLegalVisible();
-                      changeSendData("КХ", "legal_name");
-                    }}
-                  >
-                    КХ
-                  </p>
-                  <p
-                    onClick={() => {
-                      setLegalChoice("ИП");
-                      hundlerLegalVisible();
-                      changeSendData("ИП", "legal_name");
-                    }}
-                  >
-                    ИП
-                  </p>
+
+                  {
+                    data.legal_names?
+                    data.legal_names.map((item,index)=>{
+                      if(index!==0){
+                        return    <p
+                        onClick={() => {
+                          setLegalChoice(item.name);
+                          hundlerLegalVisible();
+                          changeSendData(item.id, "legal_name");
+                        }}
+                      >
+                        {item.name}
+                      </p>
+                      }
+          
+                    }):''
+                  }
                 </motion.div>
               )}
             </AnimatePresence>
@@ -230,50 +224,39 @@ export const ModalForm = ({ openModalForm, setOpenModalForm, setComplate }) => {
                     Сельское хозяйство: растениеводство, животноводство,
                     рыбоводство, птицеводство.
                   </p>
-                  <p
+                {data.sectors?
+                  data.sectors.map((item)=>{
+                    return  <p
                     onClick={() => {
                       setSectorChoice(
-                        "Промышленность: пр-во товаров и продуктов, обрабатывающая и добывающая пр-сть."
+                        item.name
                       );
                       hundlerSectorVisible();
                       changeSendData(
-                        "Промышленность: пр-во товаров и продуктов, обрабатывающая и добывающая пр-сть.",
+                        item.id,
                         "sector"
                       );
                     }}
                   >
-                    Промышленность: пр-во товаров и продуктов, обрабатывающая и
-                    добывающая пр-сть.
+                    {item.name}
                   </p>
-                  <p
-                    onClick={() => {
-                      setSectorChoice("Строительство");
-                      hundlerSectorVisible();
-                      changeSendData("Строительство", "sector");
-                    }}
-                  >
-                    Строительство
-                  </p>
-                  <p
-                    onClick={() => {
-                      setSectorChoice("Транспорт и Логистика");
-                      hundlerSectorVisible();
-                      changeSendData("Транспорт и Логистика", "sector");
-                    }}
-                  >
-                    Транспорт и Логистика
-                  </p>
+                  })
+                  :''
+                }
                 </motion.div>
               )}
             </AnimatePresence>
           </form>
         </div>
+   
       </div>
       <div className={styles.button}>
         <button onClick={submitForm} className={styles.callButton}>
           Связаться
         </button>
+      </div>          
       </div>
+
     </div>
   );
 };
