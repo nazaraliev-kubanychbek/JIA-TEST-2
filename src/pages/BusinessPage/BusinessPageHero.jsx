@@ -20,7 +20,7 @@ const BusinessPageHero = () => {
         <div className="businessPage-hero-wrapper">
           <img src={borderLeftIcon} alt="" className="businessPage-hero-wrapper-borderLeft" />
         <h1 className="businessPage-hero-title">{text.title}</h1>
-        <p className="businessPage-hero-text">{text.descriptons}</p>
+        <p className="businessPage-hero-text"  dangerouslySetInnerHTML= {{__html:text.descriptons}}></p>
         <button
           className="businessPage-btn"
           onClick={() => {

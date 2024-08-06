@@ -14,51 +14,36 @@ import {
   Keyboard,
   Autoplay,
 } from "swiper/modules";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useMediaQuery } from "@hooks/usemedia/useMedia";
+import axios from "axios";
+import { useSelector } from "react-redux";
+
 
 export const SwiperSection = () => {
   const swiperRef = useRef(null);
   const swiperRef2 = useRef(null);
 
-  const arrSwiper = [
-    {
-      id: 1,
-      img: imgMan,
-      text: "Lorem ipsum",
-    },
-    {
-      id: 2,
-      img: imgMan,
-      text: "Lorem ipsum",
-    },
-    {
-      id: 3,
-      img: imgMan,
-      text: "Lorem ipsum",
-    },
-    {
-      id: 4,
-      img: imgMan,
-      text: "Lorem ipsum",
-    },
-    {
-      id: 5,
-      img: imgMan,
-      text: "Lorem ipsum",
-    },
-    {
-      id: 6,
-      img: imgMan,
-      text: "Lorem ipsum",
-    },
-    // ... остальные элементы массива
-  ];
-
   const wMobile = useMediaQuery("(max-width: 700px)");
   const wTablet = useMediaQuery("(max-width: 1024px)");
   const wLap = useMediaQuery("(max-width: 1300px)");
   const preView = wMobile ? "1" : wTablet ? "2" : wLap ? "2.5" : "4";
+  const [title1, setTitle1] = useState({});
+  const [title2, setTitle2] = useState({});
+  const [sliderData1, setSliderData1] = useState([]);
+  const [sliderData2, setSliderData2] = useState([]);
+  const lang = useSelector(s => s.reducer.lang);
+
+  useEffect(()=>{
+    axios(`https://bif.webtm.ru/${lang}/api/v1/base/slider_title/`)
+    .then(({data}) => setTitle1(data[0]));
+    axios(`https://bif.webtm.ru/${lang}/api/v1/base/slider_sponsor_title/`)
+    .then(({data}) => setTitle2(data[0]));
+    axios(`https://bif.webtm.ru/${lang}/api/v1/base/slider/`)
+    .then(({data})=> setSliderData1(data));
+    axios(`https://bif.webtm.ru/${lang}/api/v1/base/slider_sponsor/`)
+    .then(({data})=> setSliderData2(data));
+  },[lang])
   return (
     <section className="container">
       <div className={styles.container}>
@@ -66,8 +51,8 @@ export const SwiperSection = () => {
         <img src={rightBorder} alt="" className={styles.rightBorder}/>
 
         <div className={styles.slides}>
-          <h2>Участники выставки 2022</h2>
-          <div className={styles.swiperCont}>
+          <h2>{title1.title}</h2>
+          <div className={`${styles.swiperCont} ${styles.swiperCont_reverse}`}>
             <Swiper
               ref={swiperRef}
               slidesPerView={preView}
@@ -81,11 +66,11 @@ export const SwiperSection = () => {
               }}
               modules={[Navigation, Mousewheel, Keyboard, FreeMode, Autoplay]}
             >
-              {arrSwiper.map((item) => (
+              {sliderData1.map((item) => (
                 <SwiperSlide key={item.id}>
-                  <div className={styles.swiperItem}>
+                  <div className={`${styles.swiperItem} ${styles.swiperItem_reverse}`}>
                     <div className={styles.photo}>
-                      <img src={item.img} alt="manPhoto" />
+                      <img src={item.image} alt="manPhoto" />
                     </div>
                     <p>{item.text}</p>
                   </div>
@@ -131,9 +116,9 @@ export const SwiperSection = () => {
             </button>
           </div>
         </div>
-
+              <div className={styles.swiderLine}></div>
         <div className={styles.slides}>
-          <h2>Спонсоры и партнеры</h2>
+          <h2>{title2.title}</h2>
           <div className={styles.swiperCont}>
             <Swiper
               ref={swiperRef2}
@@ -146,13 +131,14 @@ export const SwiperSection = () => {
                 delay: 2500,
                 disableOnInteraction: false,
               }}
+
               modules={[Navigation, Mousewheel, Keyboard, FreeMode, Autoplay]}
             >
-              {arrSwiper.map((item) => (
+              {sliderData2.map((item) => (
                 <SwiperSlide key={item.id}>
                   <div className={styles.swiperItem}>
                     <div className={styles.photo}>
-                      <img src={item.img} alt="manPhoto" />
+                      <img src={item.image} alt="manPhoto" />
                     </div>
                     <p>{item.text}</p>
                   </div>
