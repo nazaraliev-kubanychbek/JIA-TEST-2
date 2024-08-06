@@ -1,5 +1,6 @@
 // import { FirstSection } from "@components/ProjectsSections";
 // import bannerImage from "../../img/projectsBanner.png";
+import ReactPlayer from "react-player";
 import classes from "./ProjectsPage.module.scss";
 import ages1 from "../../img/projects-ages/2015.svg";
 import ages2 from "../../img/projects-ages/2016.svg";
@@ -24,6 +25,7 @@ import image1 from "../../img/sliderImage.png";
 import image2 from "../../img/header/emblem.png";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { SwiperSection } from "@pages/HomePage/HomeSections";
 
 const getDinamicData = async (url) => {
   const data = (await fetch(url)).json();
@@ -191,7 +193,16 @@ export const ProjectsPage = () => {
 
                       </p>
                       <div className={classes.history_lines_video}>
-                        <iframe
+                        <div className={classes.history_lines_video_block}>
+                        <ReactPlayer
+                      width={'100%'}
+                      height={'100%'}
+                      position={'relative'}
+                      zIndex={'2'}
+                                    url={item.url} controls={true} alt=""/>
+                        </div>
+
+                        {/* <iframe
                           width="560"
                           height="315"
                           src={item.url}
@@ -200,7 +211,7 @@ export const ProjectsPage = () => {
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                           referrerpolicy="strict-origin-when-cross-origin"
                           allowfullscreen
-                        ></iframe>
+                        ></iframe> */}
                         <img
                           className={classes.history_lines_video_border}
                           alt="history_lines_video_border"
@@ -228,7 +239,15 @@ export const ProjectsPage = () => {
                   </h1>
                   <div className={classes.history_lines_block_content}>
                     <div className={classes.history_lines_video}>
-                      <iframe
+                    <div className={classes.history_lines_video_block}>
+                        <ReactPlayer
+                      width={'100%'}
+                      height={'100%'}
+                      position={'relative'}
+                      zIndex={'2'}
+                                    url={item.url} controls={true} alt=""/>
+                        </div>
+                      {/* <iframe
                         width="560"
                         height="315"
                         src={item.url}
@@ -237,7 +256,7 @@ export const ProjectsPage = () => {
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin"
                         allowfullscreen
-                      ></iframe>
+                      ></iframe> */}
                       <img
                         className={classes.history_lines_video_border}
                         alt="history_lines_video_border"
@@ -246,7 +265,7 @@ export const ProjectsPage = () => {
                       />
                     </div>
                     <p dangerouslySetInnerHTML={{__html:item.descriptions}}>
-                   
+
                     </p>
                   </div>
                   <div className={classes.history_lines_footer}>
@@ -266,7 +285,8 @@ export const ProjectsPage = () => {
 
 
        </section>
-          <h1 className={classes.projects_photo_title + ' title'} style={{ textAlign: "center", marginTop: 150 }}>
+       <SwiperSection />
+          {/* <h1 className={classes.projects_photo_title + ' title'} style={{ textAlign: "center", marginTop: 150 }}>
             фотографии
           </h1>
           <div className={classes.swiper_projects_wrap}>
@@ -293,7 +313,7 @@ export const ProjectsPage = () => {
               }
               </Swiper>
             </div>
-          </div>
+          </div> */}
         </>
       ) : (
         ""

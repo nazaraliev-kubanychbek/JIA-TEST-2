@@ -1,9 +1,13 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState} from 'react';
 import styles from './AboutForumSectoins.module.scss';
 import { ModalSendForm } from '@components/index';
+import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 export const AboutForumSectoins = () => {
-
+    const lang = useSelector(s => s.reducer.lang);
+    const [text, setText] = useState({});
+    const [statistic, setStatistic] = useState([]);
     const observerRef = useRef(null);
 
     const [ currVal1, setCurrVal1 ] = useState(0);
@@ -13,8 +17,8 @@ export const AboutForumSectoins = () => {
     const [openModal, setOpenModal] = useState(false);
 
     const val1 = 20;
-    const time = 78; 
-    const time3 = 35; 
+    const time = 78;
+    const time3 = 35;
     const val2 = 198;
     const time1 = 13;
     const val3 = 44;
@@ -47,28 +51,30 @@ export const AboutForumSectoins = () => {
     };
     }, [ currVal1, currVal2, currVal3, observerRef ]);
 
-    // console.log(openModal);
+   useEffect(()=>{
+    axios(`https://bif.webtm.ru/${lang}/api/v1/base/about_the_forum/`)
+    .then(({data}) => setText(data[0]));
+    axios( `https://bif.webtm.ru/${lang}/api/v1/about/statistics/`)
+    .then(({data})=> setStatistic(data))
+   }, [lang])
     return (
         <section className='container'>
             <div className={styles.container}>
-              <h2>О форуме</h2>
-              <p> 
-                  Бишкекский Инвестиционный Форум - площадка для взаимодействия МСБ с крупными компаниями, инвесторами, парламентариями и представителями международных организаций. С 2015 года в рамках BIF были презентованы десятки перспективных бизнес-проектов, которые привлекли инвестиции.
+              <h2>{text.title}</h2>
+              <p>
+                  {text.descriptions}
               </p>
 
               <div ref={observerRef} className={styles.flexItems}>
-                  <div className={styles.item}>
-                      <h3>{currVal1}<span>млн $</span></h3>
-                      <p>Общая сумма привлеченных инвестиций</p>
-                  </div>
-                  <div className={styles.item}>
-                      <h3>{currVal2}</h3>
-                      <p>Количество проектов попавших в каталог</p>
-                  </div>
-                  <div className={styles.item}>
-                      <h3>{currVal3}</h3>
-                      <p>Количество чемпионов проектов, представленных на форуме </p>
-                  </div>
+                {
+                  statistic.map(item =>{
+                    return <div key={item.id} className={styles.item}>
+                    <h3>{item.title}</h3>
+                    <p>{item.descriptions}</p>
+                </div>
+                  })
+                }
+
               </div>
 
               {/* <a target='_blank' href="https://forms.gle/KmxKTQ91qZ9zJrqT8" rel="noreferrer"> */}
@@ -79,4 +85,3 @@ export const AboutForumSectoins = () => {
         </section>
     );
 }
-
