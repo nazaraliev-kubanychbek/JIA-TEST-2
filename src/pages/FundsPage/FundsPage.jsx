@@ -11,7 +11,10 @@ export const FundsPage = () => {
         (async()=>{
             const res =await fetch('https://bif.webtm.ru/ru/api/v1/financing/financing/')
             const data_fetch =await res.json()
-            setData({...data,title:data_fetch[0].title})
+            console.log(data_fetch);
+            if(data_fetch.length){
+                setData({...data,title:data_fetch[0].title})
+            }
         })()
     },[])
     return (
