@@ -10,37 +10,64 @@ export const ModalFinancing = ({setOpenModalForm ,openModal, setOpenModal, item}
     }
     return (
         <div onClick={() => {setOpenModal(false); setOpenDescription(false)}} className={styles.open}>
-            {
-                !openDescription ? (
-                    <div style={openDescription ? {visibility: 'hidden'} : {visibility: 'visible'}} onClick={event => event.stopPropagation()} className={styles.block}>
-                        <div className={styles.shortName}>
-                            <p className={styles.firstLink}>{title}</p>
-                        </div>
+        
+             <div className={styles.open_wrap}>
 
-                        <p onClick={() => setOpenDescription(true)} className={styles.link}>Подробнее</p>
+                <div onClick={event => event.stopPropagation()} className={styles.descriptionBlock}>
+                    <div className={styles.img}>
+                        <img src={img} alt="logo" />
                     </div>
-                ) : (
-                    <div onClick={event => event.stopPropagation()} className={styles.descriptionBlock}>
-                        <div className={styles.img}>
-                            <img src={img} alt="logo" />
-                        </div>
-                        <div className={styles.text}>
-                            <h2>Название</h2>
-                            <p>{title}</p>
+                    <div className={styles.text}>
+                        <h2>Название</h2>
+                        <p>{title}</p>
 
-                            <h2>Описание</h2>
-                            <p>{description}</p>
+                        <h2>Описание</h2>
+                        <p>{description}</p>
 
-                            <h2>Виды финансирования</h2>
-                            <p>{typeFinancing}</p>
-                        </div>
+                        <h2>Виды финансирования</h2>
+                        <p>{typeFinancing}</p>
                     </div>
-                )
-            }
-
-            <div className={styles.button}>
-                <button onClick={() => setOpenModalForm(true)} className={styles.callButton}>Связаться</button>
-            </div>
+                </div>
+            
+        <div className={styles.button}>
+            <button onClick={() => setOpenModalForm(true)} className={styles.callButton}>Связаться</button>
         </div>
+    </div>
+    </div>
+
+        // <div onClick={() => {setOpenModal(false); setOpenDescription(false)}} className={styles.open}>
+        //     {
+        //         !openDescription ? (
+        //             <div style={openDescription ? {visibility: 'hidden'} : {visibility: 'visible'}} onClick={event => event.stopPropagation()} className={styles.block}>
+        //                 <div className={styles.shortName}>
+        //                     <p className={styles.firstLink}>{title}</p>
+        //                 </div>
+
+        //                 <p onClick={() => setOpenDescription(true)} className={styles.link}>Подробнее</p>
+        //             </div>
+        //         ) : (
+        //             <div onClick={event => event.stopPropagation()} className={styles.descriptionBlock}>
+        //                 <div className={styles.img}>
+        //                     <img src={img} alt="logo" />
+        //                 </div>
+        //                 <div className={styles.text}>
+        //                     <h2>Название</h2>
+        //                     <p>{title}</p>
+
+        //                     <h2>Описание</h2>
+        //                     <p>{description}</p>
+
+        //                     <h2>Виды финансирования</h2>
+        //                     <p>{typeFinancing}</p>
+        //                 </div>
+        //             </div>
+        //         )
+        //     }
+
+        //     <div className={styles.button}>
+        //         <button onClick={() => setOpenModalForm(true)} className={styles.callButton}>Связаться</button>
+        //     </div>
+        // </div>
     );
+
 }

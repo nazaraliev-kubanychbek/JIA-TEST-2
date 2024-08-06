@@ -11,7 +11,7 @@ export const FirstSection = () => {
     const [openModal, setOpenModal] = useState(false);
     const [openModalForm, setOpenModalForm] = useState(false);
     const [complate, setComplate] = useState(false);
-
+    const [item,setItem] = useState({})
     const arrTable = [
         {
             id: 1,
@@ -56,16 +56,13 @@ export const FirstSection = () => {
                 <div className={styles.logoContainer}>
                     {
                         arrTable?.map(item => (
-                            <div onClick={() => setOpenModal(!openModal)} className={styles.logoItem} key={item.id}>
+                        <div onClick={() => {setOpenModal(!openModal);setItem(item)}} className={styles.logoItem} key={item.id}>
                                 <img className={styles.img} src={item.img} alt="logo" />
-                                <ModalFinancing setOpenModalForm={setOpenModalForm} item={item} openModal={openModal} setOpenModal={setOpenModal} />
                             </div>
-
                         ))
                     }
                 </div>
-
-
+                <ModalFinancing setOpenModalForm={setOpenModalForm} item={item} openModal={openModal} setOpenModal={setOpenModal} />
                 <button onClick={() => setOpenModalForm(!openModalForm)} className={styles.button}>Связаться</button>
                 <ModalForm openModalForm={openModalForm} setOpenModalForm={setOpenModalForm} setComplate={setComplate}/>
                 <ModalComplate openModalComplate={complate} setOpenModalComplate={setComplate} />
