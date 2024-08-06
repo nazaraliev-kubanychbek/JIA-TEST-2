@@ -51,12 +51,14 @@ export const ModalForm = ({ openModalForm, setOpenModalForm, setComplate }) => {
 
   const submitForm = async (event) => {
     event.stopPropagation();
+    console.log(sendData);
+    
     const check =
       sendData.full_name.length &&
       sendData.name_company.length &&
-      sendData.legal_name.length &&
+      sendData.legal_name &&
       sendData.brief_description.length &&
-      sendData.sector.length;
+      sendData.sector;
     console.log(check);
     if (!check) {
       alert("Вы не заполнили все поля !");
@@ -74,7 +76,7 @@ export const ModalForm = ({ openModalForm, setOpenModalForm, setComplate }) => {
         "https://bif.webtm.ru/ru/api/v1/financing/reach/",
         params
       );
-      const data = res.json();
+      const data =await res.json();
       console.log(data);
     } catch {
       alert("Проблемы с сетью !");
