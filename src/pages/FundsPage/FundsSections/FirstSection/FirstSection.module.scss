@@ -59,6 +59,7 @@
             .img{
                 width: 187px;
                 height: auto;
+                
                 @include respond-to("medium"){
                     width: 100%;
                 }
