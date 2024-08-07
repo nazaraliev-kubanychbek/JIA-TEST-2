@@ -138,13 +138,19 @@
     justify-content: space-between;
     margin-top: 70px;
     flex-wrap: wrap;
-    row-gap: 50px;
+    gap: 50px;
 }
 .history_ages p {
   text-shadow: 1px 0 #D3A60D, -1px 0 #D3A60D, 0 1px #D3A60D, 0 -1px #D3A60D,
   1px 1px #D3A60D, -1px -1px #D3A60D, 1px -1px #D3A60D, -1px 1px #D3A60D;
   color: #051650;
   font-size: 60px;
+  transition: .5s;
+  cursor: pointer;
+  &:hover{
+    color: #D3A60D;
+    text-shadow: 0 0 15px #D3A60D;
+  }
 }
 .about_content{
     margin-bottom: 150px;

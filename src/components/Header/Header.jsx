@@ -1,15 +1,15 @@
 import "./header.scss";
 import { Link } from "react-router-dom";
 import bifIcon from "./icons/bifIcon.svg";
-import greenEconimyIcon from "./icons/greenEconomyIcon.svg";
+import bifMobileIcon from './icons/bifMobileIcon.svg';
 import arrow from "../../img/header/Icons.svg";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { useMediaQuery } from "@hooks/usemedia/useMedia";
-import { BurgerMenu } from "..";
 import { setLang } from "../../redux/reducer";
 import { useDispatch, useSelector } from "react-redux";
 import burgerIcon from './icons/burger-icon.svg';
+import axios from "axios";
+import greenIcon2 from './icons/greenEconomyIcon2.svg';
 
 const languages = [
   {
@@ -64,6 +64,7 @@ export const Header = () => {
   const dispatch = useDispatch();
   const lang = useSelector(s => s.reducer.lang);
   const [showBurger, setShowBurger] = useState(false);
+  const [logo, setLogo] = useState({})
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -82,17 +83,35 @@ export const Header = () => {
   useEffect(()=>{
     dispatch(setLang(selectedLang.value))
   }, [selectedLang, dispatch])
+
+  useEffect(()=>{
+    axios('https://bif.webtm.ru/ru/api/v1/base/logo/')
+    .then(({data})=> setLogo(data[0]))
+    .catch((error) => {
+      setLogo({})
+    });
+  }, [])
   return (
     <header>
       <div className={"header-top"}>
         <div className="container">
           <div className="header-top-container">
-            <div className="header-top-img">
-              <img  className="header-top-img-img1" src={bifIcon} alt="" />
+            <div className="header-top-img header-top-img-1">
+              <img  className="header-top-img-img1" src={
+                window.screen.width > 576
+                ? bifIcon
+                : bifMobileIcon
+              } alt="" />
             </div>
-            <div className="header-top-img">
-              <img className="header-top-img-img2" src={greenEconimyIcon} alt="" />
+            {
+              logo.logo_2
+              ? <div className="header-top-img header-top-img2">
+                <img src={greenIcon2} alt="" className="header-top-img-2" />
+              <img className="header-top-img-img2" src={logo.logo_2} alt="" />
             </div>
+            : ''
+            }
+
           </div>
         </div>
       </div>
@@ -165,52 +184,3 @@ export const Header = () => {
     </header>
   );
 };
-
-{
-  /* <div className="container">
-<div className={styles.header}>
-    <div className={styles.links}>
-      {!w ? (
-        <BurgerMenu />
-      ) : (
-        <>
-          <Link onClick={scrollToTop} to={'/'}>
-          Главная
-          </Link>
-          <Link onClick={scrollToTop} to={'/projects'}>О проекте</Link>
-          <Link onClick={scrollToTop} to={'/funds'}>Источники финансирования</Link>
-          <Link onClick={scrollToTop} to={'/business'}>Бизнес проекты</Link>
-          <Link onClick={scrollToTop} to={'/exhibition'}>Выставка</Link>
-        </>
-      )}
-    </div>
-
-    <div onClick={showLang} style={show ? { position: 'absolute', right: '30px', borderRadius: '20px' } : { backgroundColor: 'none' }} className={styles.language}>
-      <div className={styles.mainLang}>
-        <p>{lang}</p>
-        <img style={show ? { transform: 'rotate(-180deg)' } : { transform: 'rotate(0deg)' }} src={arrow} alt="arrow" />
-      </div>
-
-      <AnimatePresence>
-        {show && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            style={{ overflow: 'hidden' }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className={styles.hidden}>
-              {languages.map((language, index) => (
-                language !== lang ? (
-                  <p key={index} onClick={() => changeLang(language)}>{language}</p>
-                ) : null
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  </div>
-</div> */
-}

@@ -2,7 +2,7 @@
 
 .container{
     width: 100%;
-    padding: 80px 0 380px 0;
+    padding: 80px 0 200px 0;
     text-align: center;
 
     .imageGraph{
@@ -39,38 +39,21 @@
     .logoContainer{
         width: 100%;
         padding: 50px 35px;
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        display: flex;
         background-color: #E7E7E7EE;
         gap: 20px;
-        
-        @include respond-to("x-large"){
-            grid-template-columns: repeat(4, 1fr);
-        }
-        @include respond-to("betweenLandX"){
-            grid-template-columns: repeat(3, 1fr);
-        }
-        @include respond-to("large"){
-            grid-template-columns: repeat(2, 1fr);
-            margin: 0 auto;
-        }
-        @include respond-to("medium"){
-            width: 90%;
-            grid-template-columns: repeat(1, 1fr);
-            text-align: center;
-            padding: 40px 20px;
-        }
+        justify-content: center;
+        flex-wrap: wrap;
 
         .logoItem{
             width: 250px;
             height: 250px;
-            margin: 0 auto;
             background-color: #C5C5C5;
             padding: 62px 30px;
             @include respond-to("medium"){
                 width: 200px;
                 height: 200px;
-                padding: 42px 10px;
+                padding: 0 10px;
             }
 
             .img{

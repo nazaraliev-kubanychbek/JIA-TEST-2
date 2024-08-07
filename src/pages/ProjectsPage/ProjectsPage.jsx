@@ -153,8 +153,8 @@ export const ProjectsPage = () => {
               {data.history[0].title}
               <img src={vector_left} alt="" />
             </h1>
-            <p className={classes.history_text}>
-            {data.history[0].descriptions}
+            <p className={classes.history_text}  dangerouslySetInnerHTML= {{__html: data.history[0].descriptions}}>
+           
             </p>
             <div className={classes.history_ages}>
               <p>{data.history[0].year_1}</p>
