@@ -26,13 +26,19 @@ import image2 from "../../img/header/emblem.png";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { SwiperSection } from "@pages/HomePage/HomeSections";
-
+import { useMediaQuery } from "@hooks/usemedia/useMedia";
 const getDinamicData = async (url) => {
   const data = (await fetch(url)).json();
   console.log(data);
   return data;
 };
 export const ProjectsPage = () => {
+  const isM = useMediaQuery(
+    "screen and (max-width : 769px)"
+  );
+  console.log(isM,'isM');
+
+
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState({});
   const lang = useSelector(s => s.reducer.lang);
@@ -154,7 +160,7 @@ export const ProjectsPage = () => {
               <img src={vector_left} alt="" />
             </h1>
             <p className={classes.history_text}  dangerouslySetInnerHTML= {{__html: data.history[0].descriptions}}>
-           
+
             </p>
             <div className={classes.history_ages}>
               <p>{data.history[0].year_1}</p>
@@ -195,10 +201,11 @@ export const ProjectsPage = () => {
                       <div className={classes.history_lines_video}>
                         <div className={classes.history_lines_video_block}>
                         <ReactPlayer
-                      width={'100%'}
+                      width={isM?'100vw':'100%'}
                       height={'100%'}
                       position={'relative'}
                       zIndex={'2'}
+
                                     url={item.url} controls={true} alt=""/>
                         </div>
 
@@ -241,7 +248,7 @@ export const ProjectsPage = () => {
                     <div className={classes.history_lines_video}>
                     <div className={classes.history_lines_video_block}>
                         <ReactPlayer
-                      width={'100%'}
+                         width={isM?'100vw':'100%'} 
                       height={'100%'}
                       position={'relative'}
                       zIndex={'2'}

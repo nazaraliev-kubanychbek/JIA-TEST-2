@@ -20,6 +20,7 @@ const BusinessProjects = () => {
             return (
                 <div key={item.id} className="businessPage-projects-card">
                  <a href={item.image} target="_blank">
+                 
                  <img
                     src={pdfICon}
                     alt=""
