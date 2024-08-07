@@ -143,7 +143,10 @@ export const Footer = () => {
         </div>
 
         <div className="footer-line"></div>
+        <a href="https://geeks.kg/geeks-pro" target="_blank" className="footer-geeks-link">
         <img src={geeksProLogo} alt="" className="footer-geeks-logo" />
+        </a>
+
       </div>
     </footer>
   );

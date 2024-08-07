@@ -82,10 +82,14 @@ position: relative;
         margin-top: 30px;
         position: relative;
     }
-    &-geeks-logo{
+    &-geeks-link{
         display: block;
+        width: 185px;
         margin: 10px auto;
         position: relative;
+    }
+    &-geeks-logo{
+        width: 100%;
     }
 }
 
