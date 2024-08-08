@@ -142,13 +142,14 @@ backdrop-filter: blur(11.13636302947998px);
     flex-wrap: wrap;
     gap: 50px;
 }
-.history_ages p {
+.history_ages p a {
   text-shadow: 1px 0 #D3A60D, -1px 0 #D3A60D, 0 1px #D3A60D, 0 -1px #D3A60D,
   1px 1px #D3A60D, -1px -1px #D3A60D, 1px -1px #D3A60D, -1px 1px #D3A60D;
   color: #051650;
   font-size: 60px;
   transition: .5s;
   cursor: pointer;
+  text-decoration: none;
   &:hover{
     color: #D3A60D;
     text-shadow: 0 0 15px #D3A60D;

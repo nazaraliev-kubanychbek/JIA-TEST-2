@@ -28,6 +28,7 @@ position: relative;
             color: #064CA1;
             margin-bottom: 10px;
             display: block;
+            text-transform: uppercase;
         }
 
         &-link {
@@ -49,6 +50,7 @@ position: relative;
             line-height: 20px;
             color: #064CA1;
             margin-bottom: 10px;
+            text-transform: uppercase;
         }
         &-link{
             font-size: 18px;
@@ -68,6 +70,7 @@ position: relative;
             line-height: 20px;
             color: #064CA1;
             margin-bottom: 10px;
+            text-transform: uppercase;
         }
         &-links{
             display: flex;
@@ -94,7 +97,9 @@ position: relative;
 }
 
 
-
+.footer-social-mobile{
+    display: none;
+}
 
 @media screen and (max-width: 992px) {
     .footer .col-3{
@@ -118,9 +123,20 @@ position: relative;
     .footer-nav{
         order: 1;
     }
+    .footer-social{
+        display: none;
+    }
+    .footer-social-mobile{
+        display: block;
+    }
+    .footer-social-links{
+        flex-wrap: wrap;
+        gap: 20px;
+    }
     .footer .col-3:first-child{
         width: 100%;
     }
+
     .footer-bif-logo{
         height: 65%;
     }
@@ -130,4 +146,12 @@ position: relative;
     .footer-contact-link{
         font-size: 12px;
     }
+    .footer-nav-link{
+        font-size: 12px;
+    }
+    .footer-nav-title,
+    .footer-social-title{
+        font-size: 14px;
+    }
+
 }

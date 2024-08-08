@@ -77,7 +77,15 @@ export const Header = () => {
     setShowLangList(!showLangList);
   };
 
+const burgerFunc = () =>{
+  if(showBurger){
+     document.querySelector('body').style.cssText = 'overflow: auto;'
+  } else{
+     document.querySelector('body').style.cssText = 'overflow: hidden;'
+  }
+  setShowBurger(!showBurger);
 
+}
 
   const w = useMediaQuery("(min-width: 1024px)");
   useEffect(()=>{
@@ -120,42 +128,54 @@ export const Header = () => {
         <div className="container header-container">
           <div className="header-menu">
             <div className="burger-btn" onClick={()=>{
-              setShowBurger(!showBurger)
+              burgerFunc()
+
             }}>
                 <img src={burgerIcon} alt="" />
             </div>
+            <div className={
+              showBurger
+              ? 'header-nav-show-bg header-nav-show-bg-show'
+              : 'header-nav-show-bg'
+            } onClick={()=>{
+              burgerFunc()
+            }}></div>
           <div className={
             showBurger
             ? "header-nav header-nav-show"
             : "header-nav"
           }>
+
+            <button className="close-burger-btn" onClick={()=>{
+             burgerFunc()
+            }}></button>
             <Link onClick={()=>{
               scrollToTop();
-              setShowBurger(false)
+              burgerFunc()
             }} to={"/"}>
               {linkText.main[lang]}
             </Link>
             <Link  onClick={()=>{
               scrollToTop();
-              setShowBurger(false)
+              burgerFunc()
             }} to={"/projects"}>
              {linkText.projects[lang]}
             </Link>
             <Link onClick={()=>{
               scrollToTop();
-              setShowBurger(false)
+              burgerFunc()
             }} to={"/funds"}>
               {linkText.funds[lang]}
             </Link>
             <Link  onClick={()=>{
               scrollToTop();
-              setShowBurger(false)
+              burgerFunc()
             }} to={"/business"}>
               {linkText.business[lang]}
             </Link>
             <Link  onClick={()=>{
               scrollToTop();
-              setShowBurger(false)
+              burgerFunc()
             }} to={"/exhibition"}>
               {linkText.exhibition[lang]}
             </Link>

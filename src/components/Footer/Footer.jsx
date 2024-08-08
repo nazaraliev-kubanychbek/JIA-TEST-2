@@ -94,6 +94,29 @@ export const Footer = () => {
               </p>
             </a>
            </div>
+           <div className="footer-social footer-social-mobile">
+            <h3 className="footer-social-title">{linkText.social[lang]}</h3>
+            <div className="footer-social-links">
+              <a
+                target="_balnk"
+                href="https://api.whatsapp.com/send?%20phone=996555895362"
+              >
+                <img src={whatsapp} alt="whatsapp" />
+              </a>
+              <a
+                target="_balnk"
+                href="https://www.facebook.com/bishkekinvestmentforum?mibextid=LQQJ4d "
+              >
+                <img src={facebook} alt="facebook" />
+              </a>
+              <a target="_balnk" href="https://www.instagram.com/bif_kg_/ ">
+                <img src={insta} alt="instagram" />
+              </a>
+              <a target="_balnk" href="https://t.me/bishkekinvestforum">
+                <img src={telegram} alt="telegram" />
+              </a>
+            </div>
+            </div>
           </div>
           <div className="col-3">
             <div className="footer-nav">
