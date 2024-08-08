@@ -110,7 +110,8 @@
 
 .burger-btn,
 .close-burger-btn,
-.header-nav-show-bg{
+.header-nav-show-bg,
+.header-nav-mobile{
     display: none;
 }
 
@@ -149,6 +150,12 @@
             opacity: 1;
             height: 100vh;
             left: 0;
+        }
+        &-mobile{
+            display: flex;
+        }
+        &-desktop{
+            display: none;
         }
     }
 

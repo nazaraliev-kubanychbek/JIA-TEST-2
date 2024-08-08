@@ -78,6 +78,7 @@ export const Header = () => {
   };
 
 const burgerFunc = () =>{
+
   if(showBurger){
      document.querySelector('body').style.cssText = 'overflow: auto;'
   } else{
@@ -140,10 +141,41 @@ const burgerFunc = () =>{
             } onClick={()=>{
               burgerFunc()
             }}></div>
+
+<div className={'header-nav header-nav-desktop'}>
+
+            
+            <Link onClick={()=>{
+              scrollToTop();
+            }} to={"/"}>
+              {linkText.main[lang]}
+            </Link>
+            <Link  onClick={()=>{
+              scrollToTop();
+            }} to={"/projects"}>
+             {linkText.projects[lang]}
+            </Link>
+            <Link onClick={()=>{
+              scrollToTop();
+            }} to={"/funds"}>
+              {linkText.funds[lang]}
+            </Link>
+            <Link  onClick={()=>{
+              scrollToTop();
+            }} to={"/business"}>
+              {linkText.business[lang]}
+            </Link>
+            <Link  onClick={()=>{
+              scrollToTop();
+            }} to={"/exhibition"}>
+              {linkText.exhibition[lang]}
+            </Link>
+          </div>
+
           <div className={
             showBurger
-            ? "header-nav header-nav-show"
-            : "header-nav"
+            ? "header-nav header-nav-mobile header-nav-show"
+            : "header-nav header-nav-mobile"
           }>
 
             <button className="close-burger-btn" onClick={()=>{
