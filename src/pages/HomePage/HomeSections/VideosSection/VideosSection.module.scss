@@ -59,6 +59,7 @@
         }
 
         .blockVideo:last-child {
+            margin-bottom: 0px;
             .text {
                 h2 {
                     top: 0;
@@ -68,6 +69,7 @@
         }
 
         .blockVideo {
+            margin-bottom: 74px;
             // width: 1400px;
             display: flex;
             justify-content: space-between;
@@ -130,6 +132,7 @@
 
             .text:nth-child(2) {
                 width: 689px;
+                text-align: left;
 
                 @include respond-to("x-large") {
                     width: 100%;
@@ -158,6 +161,8 @@
 
                     @include respond-to("large") {
                         font-size: 18px;
+                        text-align: left;
+
                     }
 
                     @include respond-to("medium") {
