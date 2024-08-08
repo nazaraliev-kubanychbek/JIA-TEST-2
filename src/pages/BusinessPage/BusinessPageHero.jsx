@@ -4,10 +4,14 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import borderLeftIcon from './img/border-left.svg';
 import borderRightIcon from './img/border-right.svg';
+import { ModalForm } from "@components/ModalWindows/ModalForm/ModalForm";
+import { ModalComplate } from "@components/ModalWindows/ModalForm/ModalComplate/ModalComplate";
 
 const BusinessPageHero = () => {
   const [text, setText] = useState({});
   const lang = useSelector((s) => s.reducer.lang);
+  const [openModalForm, setOpenModalForm] = useState(false);
+  const [complate, setComplate] = useState(false);
   const navigate = useNavigate();
   useEffect(() => {
     axios(`https://bif.webtm.ru/${lang}/api/v1/project/projects/`).then(
@@ -24,7 +28,7 @@ const BusinessPageHero = () => {
         <button
           className="businessPage-btn"
           onClick={() => {
-            navigate("/funds");
+            setOpenModalForm(true)
           }}
         >
           {
@@ -37,7 +41,8 @@ const BusinessPageHero = () => {
         </button>
         <img src={borderRightIcon} alt="" className="businessPage-hero-wrapper-borderRight" />
         </div>
-
+        <ModalForm openModalForm={openModalForm} setOpenModalForm={setOpenModalForm} setComplate={setComplate}/>
+        <ModalComplate openModalComplate={complate} setOpenModalComplate={setComplate} />
       </div>
     </div>
   );

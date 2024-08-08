@@ -6,11 +6,14 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import borderLeftIcon from './img/border-left.svg';
 import borderRightIcon from './img/border-right.svg';
+import { ModalSendForm } from "@components/index";
+
 
 export const ExhibitionPage = () => {
   const [text, setText] = useState({});
   const navigate = useNavigate();
   const lang = useSelector((s) => s.reducer.lang);
+  const [openModal, setOpenModal] = useState(false);
 
   useEffect(() => {
     setText({});
@@ -35,7 +38,7 @@ export const ExhibitionPage = () => {
             <button
               className="exhibitionPage-btn"
               onClick={() => {
-                navigate("/funds");
+                setOpenModal(true)
               }}
             >
               {
@@ -48,6 +51,7 @@ export const ExhibitionPage = () => {
             </button>
           </div>
         </div>
+        <ModalSendForm openModal={openModal} setOpenModal={setOpenModal} />
       </div>
     </div>
   );

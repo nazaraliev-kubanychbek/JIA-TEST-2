@@ -129,26 +129,7 @@ export const ProjectsPage = () => {
             <div className={classes.about_content}>
               <p className={classes.about_text_content} dangerouslySetInnerHTML= {{__html:data.about.desc}}>
 
-                {/* Бишкекский Инвестиционный Форум - эта площадка, где встречаются МСБ
-            с крупным бизнесом, внутренними и зарубежными инвесторами,
-            представителями парламентариев и государственных структур,
-            международных и местных организаций, посольств и бизнес сообщества.
-            В рамках форума презентуются самые успешные и перспективные бизнес
-            проекты, обсуждение ожидаемых трендов и изменения в экономике и
-            бизнес среде и новые векторы сотрудничества для предпринимателей.
-            <br />
-            <br />
-            BIF это уникальная возможность для презентации самых лучших бизнес
-            проектов, поиска динамично растущего бизнеса для инвестиций и
-            потенциальных инвесторов/бизнес партнеров для заключения реальных
-            контрактов и соглашений.
-            <br />
-            <br />
-            За прошедшие годы BIF продемонстрировал высокий спрос на платформу,
-            где предприниматели могут встретиться напрямую с инвесторами и
-            потенциальными партнерами в своей сфере деятельности. По результатам
-            предыдущих лет, а именно с 2015 по 2022 были заключены успешные
-            сделки на сумму более чем 20 $ млн.  */}
+
               </p>
             </div>
           </section>
@@ -163,22 +144,34 @@ export const ProjectsPage = () => {
 
             </p>
             <div className={classes.history_ages}>
-              <p>{data.history[0].year_1}</p>
-              <p>{data.history[0].year_2}</p>
-              <p>{
+              <p>
+              <a href={`#${data.history[0].year_1}`}>
+              {data.history[0].year_1}
+              </a>
+              </p>
+              <p>
+              <a href={`#${data.history[0].year_2}`}>{data.history[0].year_2}</a>
+              </p>
+              <p>
+                <a href={`#${data.history[0].year_3}`}>
+                {
             data.history[0].year_3
-          }</p>
-          <p>{
+          }
+                </a>
+              </p>
+          <p>
+            <a href={`#${data.history[0].year_4}`}>
+            {
             data.history[0].year_4
-          }</p>
-             <p>{
+          }
+            </a>
+          </p>
+             <p>
+             <a href={`#${data.history[0].year_5}`}>{
             data.history[0].year_5
-          }</p>
-              {/* <img src={ages1} alt="" />
-          <img src={ages2} alt="" />
-          <img src={ages3} alt="" />
-          <img src={ages4} alt="" />
-          <img src={ages5} alt="" /> */}
+          }</a>
+             </p>
+
             </div>
           </section>
 
@@ -190,7 +183,7 @@ export const ProjectsPage = () => {
                 console.log(title_content,'cont');
                 console.log(age,'age');
                 if(index%2==0){
-                  return(<div className={classes.history_lines_block}>
+                  return(<div id={age} className={classes.history_lines_block}>
                     <h1 className={classes.history_lines_title}>
                       <span>{age}</span> {title_content}
                     </h1>
@@ -209,16 +202,7 @@ export const ProjectsPage = () => {
                                     url={item.url} controls={true} alt=""/>
                         </div>
 
-                        {/* <iframe
-                          width="560"
-                          height="315"
-                          src={item.url}
-                          title="YouTube video player"
-                          frameborder="0"
-                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                          referrerpolicy="strict-origin-when-cross-origin"
-                          allowfullscreen
-                        ></iframe> */}
+
                         <img
                           className={classes.history_lines_video_border}
                           alt="history_lines_video_border"
@@ -237,7 +221,7 @@ export const ProjectsPage = () => {
                   </div>)
                 }
                 return (
-                  <div className={classes.history_lines_block}>
+                  <div id={age} className={classes.history_lines_block}>
                   <h1
                     className={classes.history_lines_title}
                     style={{ textAlign: "end" }}
@@ -248,22 +232,13 @@ export const ProjectsPage = () => {
                     <div className={classes.history_lines_video}>
                     <div className={classes.history_lines_video_block}>
                         <ReactPlayer
-                         width={isM?'100vw':'100%'} 
+                         width={isM?'100vw':'100%'}
                       height={'100%'}
                       position={'relative'}
                       zIndex={'2'}
                                     url={item.url} controls={true} alt=""/>
                         </div>
-                      {/* <iframe
-                        width="560"
-                        height="315"
-                        src={item.url}
-                        title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        allowfullscreen
-                      ></iframe> */}
+
                       <img
                         className={classes.history_lines_video_border}
                         alt="history_lines_video_border"
@@ -293,34 +268,7 @@ export const ProjectsPage = () => {
 
        </section>
        <SwiperSection />
-          {/* <h1 className={classes.projects_photo_title + ' title'} style={{ textAlign: "center", marginTop: 150 }}>
-            фотографии
-          </h1>
-          <div className={classes.swiper_projects_wrap}>
-            <div
-              className={
-                classes.slider_projects + " container swiper_projects_container"
-              }
-            >
 
-
-              <Swiper slidesPerView={
-                window.screen.width > 1200
-                ? 2.5
-                : 2
-              }>
-              {
-                data.images.map((item)=>{
-                  console.log(item)
-                  return(
-                  <SwiperSlide>
-                  <img src={item.image} />
-                </SwiperSlide>);
-                })
-              }
-              </Swiper>
-            </div>
-          </div> */}
         </>
       ) : (
         ""

@@ -2,7 +2,7 @@
 
 .container{
     width: 100%;
-    padding: 80px 0 200px 0;
+    padding: 0 0 50px 0;
     text-align: center;
 
     .imageGraph{
@@ -21,7 +21,7 @@
         font-size: 30px;
         font-weight: 700;
         padding: 15px 145px;
-        margin-top: 95px;
+        margin-top: 50px;
         transition: .3s;
         cursor: pointer;
 
@@ -45,21 +45,33 @@
         justify-content: center;
         flex-wrap: wrap;
 
+        @include respond-to("betweenSandM"){
+            padding: 40px 15px;
+        }
         .logoItem{
             width: 250px;
             height: 250px;
             background-color: #C5C5C5;
             padding: 62px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             @include respond-to("medium"){
                 width: 200px;
                 height: 200px;
-                padding: 0 10px;
+                padding: 10px;
+            }
+            @include respond-to("betweenSandM"){
+                width: 120px;
+                height: 120px;
+                padding: 5px;
             }
 
             .img{
                 width: 187px;
                 height: auto;
-                
+                max-height: 100%;
+                object-fit: cover;
                 @include respond-to("medium"){
                     width: 100%;
                 }

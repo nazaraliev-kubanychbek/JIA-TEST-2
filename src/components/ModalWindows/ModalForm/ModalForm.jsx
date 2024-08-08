@@ -18,7 +18,7 @@ export const ModalForm = ({ openModalForm, setOpenModalForm, setComplate }) => {
     brief_description: "",
     sector: "",
   });
-  
+
   const [data,setData]= useState({})
 
   console.log(data);
@@ -35,7 +35,7 @@ export const ModalForm = ({ openModalForm, setOpenModalForm, setComplate }) => {
         console.error(err);
       }
     })()
-  },[data])
+  },[])
 
   const hundlerLegalVisible = () => {
     setLegalVisible(!isLegalVisible);
@@ -184,7 +184,7 @@ export const ModalForm = ({ openModalForm, setOpenModalForm, setComplate }) => {
                   </motion.div>
                 )}
               </AnimatePresence>
-            
+
             {
               sectorChoice === 'Другое' ? (
                 <input
@@ -219,7 +219,7 @@ export const ModalForm = ({ openModalForm, setOpenModalForm, setComplate }) => {
                 </div>
               )
             }
-            
+
             <AnimatePresence>
               {isSectorVisible && (
                 <motion.div
